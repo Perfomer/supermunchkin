@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../versions.gradle'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.volkovmedia.supermanchkin"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation deps.kotlin_stdlib_jdk7
+
+    testImplementation deps.test_junit
+    testImplementation deps.kotlin_test_junit
+    androidTestImplementation deps.androidx_test_ext_junit
+    androidTestImplementation deps.androidx_test_espresso_core
+
+    implementation deps.androidx_appcompat
+    implementation deps.androidx_material
+    implementation deps.androidx_annotation
+    implementation deps.androidx_fragment_ktx
+    implementation deps.androidx_constraintlayout
+    implementation deps.androidx_recyclerview
+
+    implementation deps.androidx_lifecycle_extensions
+
+    implementation deps.rxjava2
+    implementation deps.rxjava2_rxkotlin
+    implementation deps.rxjava2_rxandroid
+
+    implementation deps.koin_android
+    implementation deps.koin_androidx_viewmodel
+
+    implementation deps.mvicore
+    implementation deps.mvicore_android
+}

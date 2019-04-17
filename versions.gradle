@@ -1,0 +1,140 @@
+def versions = [:]
+
+versions.build_compile_sdk = 28
+versions.build_min_sdk = 21
+versions.build_target_sdk = 28
+
+versions.test_junit = "4.12"
+versions.test_robolectric = "3.8"
+versions.test_mockito = "2.21.0"
+
+versions.androidx_test = "1.1.0"
+versions.androidx_test_ext_junit = "1.1.0"
+versions.androidx_test_espresso = "3.1.1"
+
+versions.kotlin = "1.3.21"
+
+versions.androidx_annotation = "1.0.1"
+versions.androidx_appcompat = "1.0.2"
+versions.androidx_cardview = "1.0.0"
+versions.androidx_recyclerview = "1.0.0"
+versions.androidx_gridlayout = "1.0.0"
+versions.androidx_material = "1.0.0"
+versions.androidx_constraintlayout = "1.1.3"
+
+versions.androidx_arch_core_testing = "2.0.0"
+versions.androidx_lifecycle = "2.0.0"
+versions.androidx_room = "2.1.0-alpha03"
+versions.androidx_paging = "2.0.0"
+
+versions.androidx_core_ktx = "1.0.1"
+versions.androidx_fragment_ktx = "1.0.0"
+versions.androidx_sqlite_ktx = "2.0.0"
+versions.androidx_collection_ktx = "1.0.0"
+
+versions.koin = '1.0.2'
+
+versions.rxjava2 = "2.2.3"
+versions.rxjava2_rxkotlin = "2.3.0"
+versions.rxjava2_rxandroid = "2.1.0"
+versions.rxjava2_rxbinding = "3.0.0-alpha2"
+
+versions.okhttp3 = "3.11.0"
+
+versions.facebook_stetho = "1.5.0"
+
+versions.timber = "4.7.1"
+versions.circleimageview = "2.2.0"
+versions.mvicore = "1.1.6"
+
+ext.versions = versions
+
+
+def deps = [:]
+
+// Testing
+deps.test_junit = "junit:junit:$versions.test_junit"
+deps.test_robolectric = "org.robolectric:robolectric:$versions.test_robolectric"
+deps.test_mockito = "org.mockito:mockito-core:$versions.test_mockito"
+
+// :: AndroidX
+deps.androidx_test_runner = "androidx.test:runner:$versions.androidx_test"
+deps.androidx_test_ext_junit = "androidx.test.ext:junit:$versions.androidx_test_ext_junit"
+deps.androidx_test_rules = "androidx.test:rules:$versions.androidx_test"
+deps.androidx_test_espresso_core = "androidx.test.espresso:espresso-core:$versions.androidx_test_espresso"
+deps.androidx_test_espresso_contrib = "androidx.test.espresso:espresso-contrib:$versions.androidx_test_espresso"
+deps.androidx_test_espresso_intents = "androidx.test.espresso:espresso-intents:$versions.androidx_test_espresso"
+deps.androidx_test_espresso_accessibility = "androidx.test.espresso:espresso-accessibility:$versions.androidx_test_espresso"
+deps.androidx_test_espresso_web = "androidx.test.espresso:espresso-web:$versions.androidx_test_espresso"
+deps.androidx_test_espresso_idling_concurrent = "androidx.test.espresso.idling:idling-concurrent:$versions.androidx_test_espresso"
+
+// :: AndroidX
+deps.androidx_test_espresso_idling_resource = "androidx.test.espresso:espresso-idling-resource:$versions.androidx_test_espresso"
+
+// Kotlin
+deps.kotlin_stdlib_jdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+deps.kotlin_test_junit = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
+
+// :: AndroidX
+deps.androidx_annotation = "androidx.annotation:annotation:$versions.androidx_annotation"
+deps.androidx_appcompat = "androidx.appcompat:appcompat:$versions.androidx_appcompat"
+deps.androidx_cardview = "androidx.cardview:cardview:$versions.androidx_cardview"
+deps.androidx_recyclerview = "androidx.recyclerview:recyclerview:$versions.androidx_recyclerview"
+deps.androidx_gridlayout = "androidx.gridlayout:gridlayout:$versions.androidx_gridlayout"
+deps.androidx_material = "com.google.android.material:material:$versions.androidx_material"
+deps.androidx_constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.androidx_constraintlayout"
+
+// :: AndroidX
+deps.androidx_arch_core_testing = "androidx.arch.core:core-testing:$versions.androidx_arch_core_testing"
+
+// :: AndroidX
+deps.androidx_lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:$versions.androidx_lifecycle"
+deps.androidx_lifecycle_compiler = "androidx.lifecycle:lifecycle-compiler:$versions.androidx_lifecycle"
+deps.androidx_lifecycle_reactivestreams_ktx = "androidx.lifecycle:lifecycle-reactivestreams-ktx:$versions.androidx_lifecycle"
+
+// :: AndroidX
+deps.androidx_room_runtime = "androidx.room:room-runtime:$versions.androidx_room"
+deps.androidx_room_compiler = "androidx.room:room-compiler:$versions.androidx_room"
+deps.androidx_room_rxjava2 = "androidx.room:room-rxjava2:$versions.androidx_room"
+deps.androidx_room_testing = "androidx.room:room-testing:$versions.androidx_room"
+
+// Android KTX
+deps.androidx_core_ktx = "androidx.core:core-ktx:$versions.androidx_core_ktx"
+deps.androidx_fragment_ktx = "androidx.fragment:fragment-ktx:$versions.androidx_fragment_ktx"
+deps.androidx_sqlite_ktx = "androidx.sqlite:sqlite-ktx:$versions.androidx_sqlite_ktx"
+deps.androidx_collection_ktx = "androidx.collection:collection-ktx:$versions.androidx_collection_ktx"
+
+// Koin for Android
+deps.koin_android = "org.koin:koin-android:$versions.koin"
+deps.koin_androidx_scope = "org.koin:koin-androidx-scope:$versions.koin"
+deps.koin_androidx_viewmodel = "org.koin:koin-androidx-viewmodel:$versions.koin"
+
+// RxJava
+deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
+deps.rxjava2_rxkotlin = "io.reactivex.rxjava2:rxkotlin:$versions.rxjava2_rxkotlin"
+deps.rxjava2_rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxjava2_rxandroid"
+deps.rxjava2_rxbinding = "com.jakewharton.rxbinding3:rxbinding:$versions.rxjava2_rxbinding"
+
+// Http
+deps.okhttp3 = "com.squareup.okhttp3:okhttp:$versions.okhttp3"
+deps.okhttp3_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3"
+deps.okhttp3_mockwebserver = "com.squareup.okhttp3:mockwebserver:$versions.okhttp3"
+
+// Glide
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+deps.glide_okhttp3_integration = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
+deps.glide_compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+
+// Facebook
+deps.facebook_stetho = "com.facebook.stetho:stetho:$versions.facebook_stetho"
+deps.facebook_stetho_okhttp3 = "com.facebook.stetho:stetho-okhttp3:$versions.facebook_stetho"
+
+// Other
+deps.timber = "com.jakewharton.timber:timber:$versions.timber"
+deps.florent37_runtime_permissions_kotlin = "com.github.florent37:runtime-permission-kotlin:$versions.florent37_runtime_permissions_kotlin"
+deps.circleimageview = "de.hdodenhof:circleimageview:$versions.circleimageview"
+
+deps.mvicore = "com.github.badoo.mvicore:mvicore:$versions.mvicore"
+deps.mvicore_android = "com.github.badoo.mvicore:mvicore-android:$versions.mvicore"
+
+ext.deps = deps
