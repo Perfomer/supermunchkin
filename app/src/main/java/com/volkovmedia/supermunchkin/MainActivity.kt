@@ -1,4 +1,4 @@
-package com.volkovmedia.supermanchkin
+package com.volkovmedia.supermunchkin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

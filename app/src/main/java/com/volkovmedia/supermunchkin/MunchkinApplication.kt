@@ -1,9 +1,9 @@
-package com.volkovmedia.supermanchkin
+package com.volkovmedia.supermunchkin
 
 import android.app.Application
 import org.koin.android.ext.android.startKoin
 
-class ManchkinApplication : Application() {
+class MunchkinApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

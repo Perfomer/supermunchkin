@@ -1,13 +1,13 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply from: '../versions.gradle'
 
 android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.volkovmedia.supermanchkin"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -39,25 +39,25 @@ dependencies {
     androidTestImplementation deps.androidx_test_espresso_core
 
     implementation deps.androidx_appcompat
-    implementation deps.androidx_material
     implementation deps.androidx_annotation
-    implementation deps.androidx_fragment_ktx
-    implementation deps.androidx_constraintlayout
-    implementation deps.androidx_recyclerview
     implementation deps.androidx_lifecycle_extensions
 
+    api deps.androidx_room_runtime
+    kapt deps.androidx_room_compiler
+    implementation deps.androidx_room_rxjava2
+    androidTestImplementation deps.androidx_room_testing
+
     implementation deps.rxjava2
-    implementation deps.rxjava2_rxkotlin
-    implementation deps.rxjava2_rxandroid
 
     implementation deps.koin_android
-    implementation deps.koin_androidx_viewmodel
-
-    implementation deps.mvicore
-    implementation deps.mvicore_android
 
     implementation project(":commons")
-    implementation project(":coredata")
+}
 
-    implementation project(":teamslist")
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        if (details.requested.group == 'androidx.lifecycle' && details.requested.name == 'lifecycle-extensions') {
+            details.useVersion "2.0.0"
+        }
+    }
 }

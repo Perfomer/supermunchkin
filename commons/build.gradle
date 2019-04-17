@@ -11,9 +11,12 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -40,7 +43,6 @@ dependencies {
     implementation deps.androidx_fragment_ktx
     implementation deps.androidx_constraintlayout
     implementation deps.androidx_recyclerview
-
     implementation deps.androidx_lifecycle_extensions
 
     implementation deps.rxjava2

@@ -1,4 +1,4 @@
-package com.volkovmedia.supermanchkin
+package com.volkovmedia.supermunchkin
 
 import org.junit.Test
 

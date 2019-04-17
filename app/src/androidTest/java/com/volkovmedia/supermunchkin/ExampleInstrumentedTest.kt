@@ -1,4 +1,4 @@
-package com.volkovmedia.supermanchkin
+package com.volkovmedia.supermunchkin
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
