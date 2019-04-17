@@ -1,12 +1,11 @@
-package com.volkovmedia.feature.teamslist.presentation.recycler
+package com.volkovmedia.feature.teamlist.presentation.recycler
 
 import android.view.View
 import com.volkovmedia.commons.view.recycler.EntityAdapter
 import com.volkovmedia.coredata.model.dto.TeamDto
-import com.volkovmedia.coredata.model.entity.Team
-import com.volkovmedia.feature.teamslist.R
+import com.volkovmedia.feature.teamlist.R
 
-internal class TeamsListAdapter(
+internal class TeamListAdapter(
     private val onClick: (TeamDto) -> Unit,
     private val onLongClick: (TeamDto) -> Unit
 ) : EntityAdapter<TeamDto, TeamViewHolder>() {

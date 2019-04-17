@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.teamslist;
+package com.volkovmedia.feature.teamlist;
 
 import org.junit.Test;
 

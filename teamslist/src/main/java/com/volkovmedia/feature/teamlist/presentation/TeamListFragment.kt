@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.teamslist.presentation
+package com.volkovmedia.feature.teamlist.presentation
 
 import android.os.Bundle
 import android.util.Log
@@ -6,31 +6,32 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkovmedia.commons.mvi.MviFragment
+import com.volkovmedia.commons.mvi.MviViewModel
 import com.volkovmedia.commons.util.currentDate
 import com.volkovmedia.commons.util.onClick
 import com.volkovmedia.commons.util.toast
 import com.volkovmedia.coredata.model.dto.TeamDto
-import com.volkovmedia.feature.teamslist.R
-import com.volkovmedia.feature.teamslist.presentation.dialog.TeamNameDialog
-import com.volkovmedia.feature.teamslist.presentation.mvi.TeamsListIntent
-import com.volkovmedia.feature.teamslist.presentation.mvi.TeamsListIntent.*
-import com.volkovmedia.feature.teamslist.presentation.mvi.TeamsListState
-import com.volkovmedia.feature.teamslist.presentation.recycler.TeamsListAdapter
+import com.volkovmedia.feature.teamlist.R
+import com.volkovmedia.feature.teamlist.presentation.dialog.TeamNameDialog
+import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListIntent
+import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListIntent.*
+import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListState
+import com.volkovmedia.feature.teamlist.presentation.recycler.TeamListAdapter
 import kotlinx.android.synthetic.main.teamslist_fragment.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
-class TeamsListFragment : MviFragment<TeamsListIntent, TeamsListState, Nothing>(
+internal class TeamListFragment : MviFragment<TeamListIntent, TeamListState, Nothing>(
     initialIntent = LoadData
 ) {
 
     override val layoutResource = R.layout.teamslist_fragment
 
-    private val navigator by lazy { activity as TeamsListNavigator }
+    private val navigator by lazy { activity as TeamListNavigator }
 
-    private val adapter = TeamsListAdapter(::onTeamClick, ::onTeamLongClick)
+    private val adapter = TeamListAdapter(::onTeamClick, ::onTeamLongClick)
 
 
-    override fun provideViewModel() = getViewModel<TeamsListViewModel>()
+    override fun provideViewModel() = getViewModel<TeamListViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,7 +47,7 @@ class TeamsListFragment : MviFragment<TeamsListIntent, TeamsListState, Nothing>(
         }
     }
 
-    override fun render(state: TeamsListState) {
+    override fun render(state: TeamListState) {
         Log.d("RENDER", state.toString())
         teamslist_progressbar.isVisible = state.isLoading
         adapter.items = state.payload

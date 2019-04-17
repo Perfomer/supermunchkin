@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.teamslist.presentation.dialog
+package com.volkovmedia.feature.teamlist.presentation.dialog
 
 import android.content.Context
 import android.widget.EditText
@@ -6,7 +6,7 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
 
-class TeamNameDialog(private val context: Context) {
+internal class TeamNameDialog(private val context: Context) {
 
     fun show(currentName: String? = null, onAccept: (String) -> Unit) {
         val input = createView(currentName)

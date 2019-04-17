@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.teamslist.presentation.recycler
+package com.volkovmedia.feature.teamlist.presentation.recycler
 
 import android.view.View
 import com.volkovmedia.commons.util.format
@@ -7,12 +7,10 @@ import com.volkovmedia.commons.util.onLongClick
 import com.volkovmedia.commons.view.recycler.base.BaseViewHolder
 import com.volkovmedia.coredata.model.dto.TeamDto
 import com.volkovmedia.coredata.model.entity.Munchkin
-import com.volkovmedia.coredata.model.entity.Team
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.teamslist_item.*
-import kotlinx.android.synthetic.main.teamslist_item.view.*
 
-class TeamViewHolder(
+internal class TeamViewHolder(
     override val containerView: View,
     private val onClick: (Int) -> Unit,
     private val onLongClick: (Int) -> Unit

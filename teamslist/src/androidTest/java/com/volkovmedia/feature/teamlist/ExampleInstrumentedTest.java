@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.teamslist;
+package com.volkovmedia.feature.teamlist;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;
