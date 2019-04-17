@@ -7,6 +7,7 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.volkovmedia.commons.KeyEntity
 import com.volkovmedia.coredata.model.MunchkinClass
+import com.volkovmedia.coredata.model.MunchkinGender
 import com.volkovmedia.coredata.model.MunchkinRace
 
 @Entity(
@@ -28,6 +29,8 @@ data class Munchkin(
     val level: Int = 1,
 
     val gear: Int = 0,
+
+    val gender: MunchkinGender = MunchkinGender.MALE,
 
     val firstClass: MunchkinClass? = null,
 

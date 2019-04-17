@@ -1,1 +1,1 @@
-include ':app', ':commons', ':coredata', ':teamslist'
+include ':app', ':commons', ':coredata', ':teamslist', ':munchkinlist'
