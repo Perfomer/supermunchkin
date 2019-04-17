@@ -11,6 +11,13 @@ var View.onClick: () -> Unit
     get() = {}
     set(value) = setOnClickListener { value() }
 
+var View.onLongClick: () -> Unit
+    get() = {}
+    set(value) = setOnLongClickListener {
+        value()
+        true
+    }
+
 fun Fragment.inflate(@LayoutRes resource: Int, root: ViewGroup? = null, attachToRoot: Boolean = false): View? {
     return context?.inflate(resource, root, attachToRoot)
 }
