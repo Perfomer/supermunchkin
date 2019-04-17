@@ -6,7 +6,7 @@ import io.reactivex.Completable
 
 class TeamsListInteractor(private val teamDao: TeamDao) {
 
-    fun getTeams() = teamDao.getTeams()
+    fun getTeams() = teamDao.getTeamsWithParticipants()
 
     fun putTeam(team: Team) = Completable.fromAction { teamDao.put(team) }
 

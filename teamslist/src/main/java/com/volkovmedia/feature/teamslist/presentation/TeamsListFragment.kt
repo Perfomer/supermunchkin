@@ -3,17 +3,13 @@ package com.volkovmedia.feature.teamslist.presentation
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
-import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkovmedia.commons.mvi.MviFragment
 import com.volkovmedia.commons.util.currentDate
 import com.volkovmedia.commons.util.onClick
 import com.volkovmedia.commons.util.toast
-import com.volkovmedia.coredata.model.entity.Team
+import com.volkovmedia.coredata.model.dto.TeamDto
 import com.volkovmedia.feature.teamslist.R
 import com.volkovmedia.feature.teamslist.presentation.dialog.TeamNameDialog
 import com.volkovmedia.feature.teamslist.presentation.mvi.TeamsListIntent
@@ -57,13 +53,13 @@ class TeamsListFragment : MviFragment<TeamsListIntent, TeamsListState, Nothing>(
     }
 
 
-    private fun onTeamClick(team: Team) {
-        postIntent(UpdateTeam(team.copy(lastGameDate = currentDate)))
-        navigator.navigateToTeam(team.id)
+    private fun onTeamClick(item: TeamDto) {
+        postIntent(UpdateTeam(item.team.copy(lastGameDate = currentDate)))
+        navigator.navigateToTeam(item.id)
     }
 
-    private fun onTeamLongClick(team: Team) {
-        postIntent(RemoveTeam(team)) //todo action mode
+    private fun onTeamLongClick(item: TeamDto) {
+        postIntent(RemoveTeam(item.team)) //todo action mode
     }
 
 }
