@@ -9,7 +9,9 @@ internal class TeamListDataSource(private val teamDao: TeamDao) : TeamListReposi
 
     override fun getTeams() = teamDao.getTeamsWithParticipants()
 
-    override fun putTeam(team: Team) = Completable.fromAction { teamDao.put(team) }
+    override fun updateTeam(team: Team) = Completable.fromAction { teamDao.update(team) }
+
+    override fun createTeam(team: Team) = Completable.fromAction { teamDao.insert(team) }
 
     override fun removeTeam(team: Team) = Completable.fromAction { teamDao.remove(team) }
 

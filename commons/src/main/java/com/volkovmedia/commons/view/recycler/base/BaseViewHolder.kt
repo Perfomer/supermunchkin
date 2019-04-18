@@ -4,8 +4,11 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import com.volkovmedia.commons.util.onClick
+import kotlinx.android.extensions.LayoutContainer
 
-abstract class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+abstract class BaseViewHolder(
+    override val containerView: View
+) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
     protected val context by lazy { itemView.context!! }
 

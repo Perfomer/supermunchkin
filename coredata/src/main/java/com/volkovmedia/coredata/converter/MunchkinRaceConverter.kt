@@ -6,9 +6,15 @@ import com.volkovmedia.coredata.model.MunchkinRace
 internal class MunchkinRaceConverter {
 
     @TypeConverter
-    fun fromEnum(type: MunchkinRace) = type.ordinal
+    fun fromEnum(type: MunchkinRace?) = type?.ordinal ?: NO_VALUE
 
     @TypeConverter
-    fun fromOrdinal(ordinal: Int) = MunchkinRace.values()[ordinal]
+    fun fromOrdinal(ordinal: Int) = if (ordinal == NO_VALUE) null else MunchkinRace.values()[ordinal]
+
+    private companion object {
+
+        private const val NO_VALUE = -1
+
+    }
 
 }

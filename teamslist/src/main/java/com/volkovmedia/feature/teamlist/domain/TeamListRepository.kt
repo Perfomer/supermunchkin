@@ -9,7 +9,9 @@ internal interface TeamListRepository {
 
     fun getTeams(): Observable<List<TeamDto>>
 
-    fun putTeam(team: Team): Completable
+    fun createTeam(team: Team): Completable
+
+    fun updateTeam(team: Team): Completable
 
     fun removeTeam(team: Team): Completable
 

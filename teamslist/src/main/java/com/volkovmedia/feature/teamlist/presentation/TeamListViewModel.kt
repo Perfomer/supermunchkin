@@ -20,11 +20,10 @@ internal class TeamListViewModel(
             .map<TeamListAction> { TeamListAction.DataShowRequested(it) }
             .startWith(TeamListAction.DataLoadingStarted)
 
-        is TeamListIntent.CreateTeam -> Observable.just(Team(name = intent.name, lastGameDate = currentDate))
-            .flatMapCompletable { interactor.putTeam(it) }
+        is TeamListIntent.CreateTeam -> interactor.createTeam(intent.name)
             .andThen(super.act(state, intent))
 
-        is TeamListIntent.UpdateTeam -> interactor.putTeam(intent.team)
+        is TeamListIntent.UpdateTeam -> interactor.updateTeam(intent.team)
             .andThen(super.act(state, intent))
 
         is TeamListIntent.RemoveTeam -> interactor.removeTeam(intent.team)
