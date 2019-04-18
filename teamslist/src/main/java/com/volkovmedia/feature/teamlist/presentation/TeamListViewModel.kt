@@ -1,13 +1,10 @@
 package com.volkovmedia.feature.teamlist.presentation
 
 import com.volkovmedia.commons.mvi.MviViewModel
-import com.volkovmedia.commons.util.currentDate
-import com.volkovmedia.coredata.model.entity.Team
 import com.volkovmedia.feature.teamlist.domain.TeamListInteractor
 import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListAction
 import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListIntent
 import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListState
-import io.reactivex.Observable
 
 internal class TeamListViewModel(
     private val interactor: TeamListInteractor

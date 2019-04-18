@@ -42,6 +42,8 @@ dependencies {
     androidTestImplementation deps.androidx_test_ext_junit
     androidTestImplementation deps.androidx_test_espresso_core
 
+    implementation deps.facebook_stetho
+
     implementation deps.androidx_appcompat
     implementation deps.androidx_material
     implementation deps.androidx_annotation
@@ -57,11 +59,9 @@ dependencies {
     implementation deps.koin_android
     implementation deps.koin_androidx_viewmodel
 
-    implementation deps.mvicore
-    implementation deps.mvicore_android
-
     implementation project(":commons")
     implementation project(":coredata")
 
     implementation project(":teamslist")
+    implementation project(":munchkinlist")
 }

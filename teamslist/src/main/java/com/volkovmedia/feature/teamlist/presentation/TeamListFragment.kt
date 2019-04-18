@@ -6,7 +6,6 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkovmedia.commons.mvi.MviFragment
-import com.volkovmedia.commons.mvi.MviViewModel
 import com.volkovmedia.commons.util.currentDate
 import com.volkovmedia.commons.util.onClick
 import com.volkovmedia.commons.util.toast

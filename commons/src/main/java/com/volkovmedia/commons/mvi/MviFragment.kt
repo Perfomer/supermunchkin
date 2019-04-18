@@ -1,5 +1,6 @@
 package com.volkovmedia.commons.mvi
 
+import com.volkovmedia.commons.util.toObservable
 import com.volkovmedia.commons.view.BaseFragment
 import io.reactivex.Observable
 import io.reactivex.ObservableSource
@@ -22,6 +23,7 @@ abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
 
     private val disposable = CompositeDisposable()
 
+
     override fun onStart() {
         super.onStart()
 
@@ -41,6 +43,7 @@ abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
         disposable.clear()
     }
 
+
     protected abstract fun provideViewModel(): MviViewModel<Intent, *, State, Subscription>
 
     protected abstract fun render(state: State)
@@ -49,18 +52,20 @@ abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
 
     protected fun postIntent(intent: Intent) = viewModel.postIntent(intent)
 
+
     private fun onStateReceived(state: State) {
         _currentState = state
         render(state)
     }
 
+
     private companion object {
 
         private infix fun <T : Any> ObservableSource<T>.bindTo(consumer: (T) -> Unit): Disposable {
-            return Observable.wrap(this)
+            return this.toObservable()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribeBy(onError = {}, onNext = consumer)
+                .subscribeBy(onNext = consumer)
         }
 
     }

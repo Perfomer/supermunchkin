@@ -55,7 +55,4 @@ dependencies {
 
     implementation deps.koin_android
     implementation deps.koin_androidx_viewmodel
-
-    implementation deps.mvicore
-    implementation deps.mvicore_android
 }

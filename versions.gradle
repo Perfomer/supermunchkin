@@ -45,7 +45,6 @@ versions.facebook_stetho = "1.5.0"
 
 versions.timber = "4.7.1"
 versions.circleimageview = "2.2.0"
-versions.mvicore = "1.1.6"
 
 ext.versions = versions
 
@@ -133,8 +132,5 @@ deps.facebook_stetho_okhttp3 = "com.facebook.stetho:stetho-okhttp3:$versions.fac
 deps.timber = "com.jakewharton.timber:timber:$versions.timber"
 deps.florent37_runtime_permissions_kotlin = "com.github.florent37:runtime-permission-kotlin:$versions.florent37_runtime_permissions_kotlin"
 deps.circleimageview = "de.hdodenhof:circleimageview:$versions.circleimageview"
-
-deps.mvicore = "com.github.badoo.mvicore:mvicore:$versions.mvicore"
-deps.mvicore_android = "com.github.badoo.mvicore:mvicore-android:$versions.mvicore"
 
 ext.deps = deps
