@@ -5,7 +5,7 @@ import androidx.core.view.isVisible
 import com.volkovmedia.component.common.util.onClick
 import com.volkovmedia.component.common.view.recycler.base.BindableViewHolder
 import com.volkovmedia.component.data.model.entity.Munchkin
-import com.volkovmedia.coreresource.stringResource
+import com.volkovmedia.component.resource.stringResource
 import com.volkovmedia.feature.munchkinlist.domain.MunchkinDto
 import kotlinx.android.synthetic.main.munchkinlist_item.*
 
