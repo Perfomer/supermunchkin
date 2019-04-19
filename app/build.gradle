@@ -63,6 +63,6 @@ dependencies {
     implementation project(':core-data')
     implementation project(':core-resource')
 
-    implementation project(':teamlist')
+    implementation project(':feature-teamlist')
     implementation project(':feature-munchkinlist')
 }
