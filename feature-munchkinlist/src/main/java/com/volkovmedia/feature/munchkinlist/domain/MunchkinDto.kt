@@ -1,6 +1,6 @@
 package com.volkovmedia.feature.munchkinlist.domain
 
-import com.volkovmedia.commons.KeyEntity
+import com.volkovmedia.component.common.KeyEntity
 import com.volkovmedia.component.coredata.model.entity.Munchkin
 
 data class MunchkinDto(

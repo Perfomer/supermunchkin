@@ -5,7 +5,7 @@ import androidx.room.ForeignKey
 import androidx.room.ForeignKey.CASCADE
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
-import com.volkovmedia.commons.KeyEntity
+import com.volkovmedia.component.common.KeyEntity
 import com.volkovmedia.component.coredata.model.MunchkinClass
 import com.volkovmedia.component.coredata.model.MunchkinGender
 import com.volkovmedia.component.coredata.model.MunchkinRace

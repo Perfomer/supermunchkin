@@ -57,7 +57,7 @@ dependencies {
     implementation deps.koin_android
     implementation deps.koin_androidx_viewmodel
 
-    implementation project(":commons")
+    implementation project(':core-common')
     implementation project(':core-data')
     implementation project(':core-resource')
 }

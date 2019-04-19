@@ -1,6 +1,6 @@
 package com.volkovmedia.feature.teamlist.presentation
 
-import com.volkovmedia.commons.mvi.MviViewModel
+import com.volkovmedia.component.common.mvi.MviViewModel
 import com.volkovmedia.feature.teamlist.domain.TeamListInteractor
 import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListAction
 import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListIntent

@@ -5,10 +5,10 @@ import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.volkovmedia.commons.mvi.MviFragment
-import com.volkovmedia.commons.util.currentDate
-import com.volkovmedia.commons.util.onClick
-import com.volkovmedia.commons.util.toast
+import com.volkovmedia.component.common.mvi.MviFragment
+import com.volkovmedia.component.common.util.currentDate
+import com.volkovmedia.component.common.util.onClick
+import com.volkovmedia.component.common.util.toast
 import com.volkovmedia.component.coredata.model.dto.TeamDto
 import com.volkovmedia.feature.teamlist.R
 import com.volkovmedia.feature.teamlist.presentation.dialog.TeamNameDialog

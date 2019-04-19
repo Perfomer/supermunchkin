@@ -1,1 +1,1 @@
-include ':app', ':commons', ':core-data', ':feature-teamlist', ':feature-munchkinlist', ':core-resource'
+include ':app', ':core-common', ':core-data', ':feature-teamlist', ':feature-munchkinlist', ':core-resource'

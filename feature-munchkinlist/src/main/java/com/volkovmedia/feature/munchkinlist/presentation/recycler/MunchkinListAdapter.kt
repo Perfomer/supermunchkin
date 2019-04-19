@@ -1,7 +1,7 @@
 package com.volkovmedia.feature.munchkinlist.presentation.recycler
 
 import android.view.View
-import com.volkovmedia.commons.view.recycler.BindableEntityAdapter
+import com.volkovmedia.component.common.view.recycler.BindableEntityAdapter
 import com.volkovmedia.feature.munchkinlist.R
 import com.volkovmedia.feature.munchkinlist.domain.MunchkinDto
 

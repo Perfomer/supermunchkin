@@ -1,6 +1,6 @@
 package com.volkovmedia.feature.teamlist.domain
 
-import com.volkovmedia.commons.util.currentDate
+import com.volkovmedia.component.common.util.currentDate
 import com.volkovmedia.component.coredata.model.entity.Team
 
 internal class TeamListInteractor(private val repository: TeamListRepository) {

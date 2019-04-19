@@ -51,7 +51,7 @@ dependencies {
 
     implementation deps.koin_android
 
-    implementation project(":commons")
+    implementation project(':core-common')
 }
 
 configurations.all {

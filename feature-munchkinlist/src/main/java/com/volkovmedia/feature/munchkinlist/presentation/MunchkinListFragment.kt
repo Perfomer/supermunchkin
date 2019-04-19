@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.volkovmedia.commons.mvi.MviFragment
-import com.volkovmedia.commons.util.argumentLong
-import com.volkovmedia.commons.util.onClick
+import com.volkovmedia.component.common.mvi.MviFragment
+import com.volkovmedia.component.common.util.argumentLong
+import com.volkovmedia.component.common.util.onClick
 import com.volkovmedia.component.coredata.model.MunchkinGender
 import com.volkovmedia.component.coredata.model.entity.Munchkin
 import com.volkovmedia.feature.munchkinlist.R

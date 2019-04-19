@@ -2,7 +2,7 @@ package com.volkovmedia.component.coredata.model.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.volkovmedia.commons.KeyEntity
+import com.volkovmedia.component.common.KeyEntity
 import java.util.*
 
 @Entity

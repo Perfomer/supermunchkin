@@ -1,6 +1,6 @@
 package com.volkovmedia.feature.munchkinlist.presentation
 
-import com.volkovmedia.commons.mvi.MviViewModel
+import com.volkovmedia.component.common.mvi.MviViewModel
 import com.volkovmedia.feature.munchkinlist.domain.MunchkinListInteractor
 import com.volkovmedia.feature.munchkinlist.presentation.mvi.MunchkinListAction
 import com.volkovmedia.feature.munchkinlist.presentation.mvi.MunchkinListIntent
