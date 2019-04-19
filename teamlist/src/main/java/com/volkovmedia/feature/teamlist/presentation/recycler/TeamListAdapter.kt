@@ -2,8 +2,7 @@ package com.volkovmedia.feature.teamlist.presentation.recycler
 
 import android.view.View
 import com.volkovmedia.commons.view.recycler.BindableEntityAdapter
-import com.volkovmedia.commons.view.recycler.EntityAdapter
-import com.volkovmedia.coredata.model.dto.TeamDto
+import com.volkovmedia.component.coredata.model.dto.TeamDto
 import com.volkovmedia.feature.teamlist.R
 
 internal class TeamListAdapter(

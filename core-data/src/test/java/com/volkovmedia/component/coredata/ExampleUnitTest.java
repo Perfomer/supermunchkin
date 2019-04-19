@@ -1,4 +1,4 @@
-package com.volkovmedia.coredata;
+package com.volkovmedia.component.coredata;
 
 import org.junit.Test;
 

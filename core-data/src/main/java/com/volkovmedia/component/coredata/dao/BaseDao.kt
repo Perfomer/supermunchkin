@@ -1,4 +1,4 @@
-package com.volkovmedia.coredata.dao
+package com.volkovmedia.component.coredata.dao
 
 import androidx.room.Delete
 import androidx.room.Insert

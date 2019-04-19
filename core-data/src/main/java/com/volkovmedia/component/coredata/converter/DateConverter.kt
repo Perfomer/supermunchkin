@@ -1,4 +1,4 @@
-package com.volkovmedia.coredata.converter
+package com.volkovmedia.component.coredata.converter
 
 import androidx.room.TypeConverter
 import java.util.*

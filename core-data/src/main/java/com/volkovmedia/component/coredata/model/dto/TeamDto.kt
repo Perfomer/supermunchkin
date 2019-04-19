@@ -1,11 +1,11 @@
-package com.volkovmedia.coredata.model.dto
+package com.volkovmedia.component.coredata.model.dto
 
 import androidx.room.Embedded
 import androidx.room.Ignore
 import androidx.room.Relation
 import com.volkovmedia.commons.KeyEntity
-import com.volkovmedia.coredata.model.entity.Munchkin
-import com.volkovmedia.coredata.model.entity.Team
+import com.volkovmedia.component.coredata.model.entity.Munchkin
+import com.volkovmedia.component.coredata.model.entity.Team
 
 data class TeamDto(
     @Embedded

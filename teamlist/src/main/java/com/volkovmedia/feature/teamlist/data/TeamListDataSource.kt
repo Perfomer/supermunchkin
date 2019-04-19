@@ -1,7 +1,7 @@
 package com.volkovmedia.feature.teamlist.data
 
-import com.volkovmedia.coredata.dao.TeamDao
-import com.volkovmedia.coredata.model.entity.Team
+import com.volkovmedia.component.coredata.dao.TeamDao
+import com.volkovmedia.component.coredata.model.entity.Team
 import com.volkovmedia.feature.teamlist.domain.TeamListRepository
 import io.reactivex.Completable
 

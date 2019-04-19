@@ -9,7 +9,7 @@ import com.volkovmedia.commons.mvi.MviFragment
 import com.volkovmedia.commons.util.currentDate
 import com.volkovmedia.commons.util.onClick
 import com.volkovmedia.commons.util.toast
-import com.volkovmedia.coredata.model.dto.TeamDto
+import com.volkovmedia.component.coredata.model.dto.TeamDto
 import com.volkovmedia.feature.teamlist.R
 import com.volkovmedia.feature.teamlist.presentation.dialog.TeamNameDialog
 import com.volkovmedia.feature.teamlist.presentation.mvi.TeamListIntent

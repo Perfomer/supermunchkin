@@ -1,6 +1,6 @@
 package com.volkovmedia.feature.teamlist.presentation.mvi
 
-import com.volkovmedia.coredata.model.dto.TeamDto
+import com.volkovmedia.component.coredata.model.dto.TeamDto
 
 internal data class TeamListState(
     val isLoading: Boolean = false,

@@ -1,7 +1,7 @@
 package com.volkovmedia.feature.teamlist.domain
 
-import com.volkovmedia.coredata.model.dto.TeamDto
-import com.volkovmedia.coredata.model.entity.Team
+import com.volkovmedia.component.coredata.model.dto.TeamDto
+import com.volkovmedia.component.coredata.model.entity.Team
 import io.reactivex.Completable
 import io.reactivex.Observable
 

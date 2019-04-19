@@ -1,4 +1,4 @@
-package com.volkovmedia.coredata.model
+package com.volkovmedia.component.coredata.model
 
 enum class MunchkinGender {
     MALE,

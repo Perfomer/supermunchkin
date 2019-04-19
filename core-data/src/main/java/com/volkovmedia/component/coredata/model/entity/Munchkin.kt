@@ -1,4 +1,4 @@
-package com.volkovmedia.coredata.model.entity
+package com.volkovmedia.component.coredata.model.entity
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
@@ -6,9 +6,9 @@ import androidx.room.ForeignKey.CASCADE
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.volkovmedia.commons.KeyEntity
-import com.volkovmedia.coredata.model.MunchkinClass
-import com.volkovmedia.coredata.model.MunchkinGender
-import com.volkovmedia.coredata.model.MunchkinRace
+import com.volkovmedia.component.coredata.model.MunchkinClass
+import com.volkovmedia.component.coredata.model.MunchkinGender
+import com.volkovmedia.component.coredata.model.MunchkinRace
 
 @Entity(
     foreignKeys = [ForeignKey(
