@@ -1,9 +1,9 @@
-package com.volkovmedia.component.coredata.dao
+package com.volkovmedia.component.data.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.volkovmedia.component.coredata.model.dto.TeamDto
-import com.volkovmedia.component.coredata.model.entity.Team
+import com.volkovmedia.component.data.model.dto.TeamDto
+import com.volkovmedia.component.data.model.entity.Team
 import io.reactivex.Observable
 
 @Dao

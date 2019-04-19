@@ -1,18 +1,18 @@
-package com.volkovmedia.component.coredata
+package com.volkovmedia.component.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.volkovmedia.component.coredata.converter.MunchkinClassConverter
-import com.volkovmedia.component.coredata.converter.MunchkinRaceConverter
-import com.volkovmedia.component.coredata.converter.DateConverter
-import com.volkovmedia.component.coredata.converter.MunchkinGenderConverter
-import com.volkovmedia.component.coredata.dao.MunchkinDao
-import com.volkovmedia.component.coredata.dao.TeamDao
-import com.volkovmedia.component.coredata.model.entity.Munchkin
-import com.volkovmedia.component.coredata.model.entity.Team
+import com.volkovmedia.component.data.converter.MunchkinClassConverter
+import com.volkovmedia.component.data.converter.MunchkinRaceConverter
+import com.volkovmedia.component.data.converter.DateConverter
+import com.volkovmedia.component.data.converter.MunchkinGenderConverter
+import com.volkovmedia.component.data.dao.MunchkinDao
+import com.volkovmedia.component.data.dao.TeamDao
+import com.volkovmedia.component.data.model.entity.Munchkin
+import com.volkovmedia.component.data.model.entity.Team
 
 @Database(
     version = 3,

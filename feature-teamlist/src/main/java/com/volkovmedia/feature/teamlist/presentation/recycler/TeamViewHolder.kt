@@ -5,8 +5,8 @@ import com.volkovmedia.component.common.util.format
 import com.volkovmedia.component.common.util.onClick
 import com.volkovmedia.component.common.util.onLongClick
 import com.volkovmedia.component.common.view.recycler.base.BindableViewHolder
-import com.volkovmedia.component.coredata.model.dto.TeamDto
-import com.volkovmedia.component.coredata.model.entity.Munchkin
+import com.volkovmedia.component.data.model.dto.TeamDto
+import com.volkovmedia.component.data.model.entity.Munchkin
 import kotlinx.android.synthetic.main.teamslist_item.*
 
 internal class TeamViewHolder(

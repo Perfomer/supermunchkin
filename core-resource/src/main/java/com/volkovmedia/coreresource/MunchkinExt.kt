@@ -1,10 +1,10 @@
 package com.volkovmedia.coreresource
 
 import androidx.annotation.StringRes
-import com.volkovmedia.component.coredata.model.MunchkinClass
-import com.volkovmedia.component.coredata.model.MunchkinClass.*
-import com.volkovmedia.component.coredata.model.MunchkinRace
-import com.volkovmedia.component.coredata.model.MunchkinRace.*
+import com.volkovmedia.component.data.model.MunchkinClass
+import com.volkovmedia.component.data.model.MunchkinClass.*
+import com.volkovmedia.component.data.model.MunchkinRace
+import com.volkovmedia.component.data.model.MunchkinRace.*
 import com.volkovmedia.component.coreresource.R
 
 val MunchkinClass.stringResource: Int

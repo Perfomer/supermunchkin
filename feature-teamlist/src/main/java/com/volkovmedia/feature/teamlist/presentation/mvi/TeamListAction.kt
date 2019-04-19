@@ -1,6 +1,6 @@
 package com.volkovmedia.feature.teamlist.presentation.mvi
 
-import com.volkovmedia.component.coredata.model.dto.TeamDto
+import com.volkovmedia.component.data.model.dto.TeamDto
 
 internal sealed class TeamListAction {
 

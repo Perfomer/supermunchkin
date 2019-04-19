@@ -1,4 +1,4 @@
-package com.volkovmedia.component.coredata
+package com.volkovmedia.component.data
 
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module.module

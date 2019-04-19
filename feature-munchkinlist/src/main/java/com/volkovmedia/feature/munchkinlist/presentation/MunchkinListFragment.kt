@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
 import com.volkovmedia.component.common.util.onClick
-import com.volkovmedia.component.coredata.model.MunchkinGender
-import com.volkovmedia.component.coredata.model.entity.Munchkin
+import com.volkovmedia.component.data.model.MunchkinGender
+import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.feature.munchkinlist.R
 import com.volkovmedia.feature.munchkinlist.domain.MunchkinDto
 import com.volkovmedia.feature.munchkinlist.presentation.mvi.MunchkinListIntent

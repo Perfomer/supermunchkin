@@ -1,8 +1,8 @@
-package com.volkovmedia.component.coredata.dao
+package com.volkovmedia.component.data.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.volkovmedia.component.coredata.model.entity.Munchkin
+import com.volkovmedia.component.data.model.entity.Munchkin
 import io.reactivex.Observable
 
 @Dao

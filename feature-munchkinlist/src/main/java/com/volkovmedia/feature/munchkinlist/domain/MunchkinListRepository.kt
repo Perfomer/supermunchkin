@@ -1,6 +1,6 @@
 package com.volkovmedia.feature.munchkinlist.domain
 
-import com.volkovmedia.component.coredata.model.entity.Munchkin
+import com.volkovmedia.component.data.model.entity.Munchkin
 import io.reactivex.Completable
 import io.reactivex.Observable
 

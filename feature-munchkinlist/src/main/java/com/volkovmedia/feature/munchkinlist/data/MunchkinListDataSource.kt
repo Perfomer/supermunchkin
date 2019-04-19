@@ -1,7 +1,7 @@
 package com.volkovmedia.feature.munchkinlist.data
 
-import com.volkovmedia.component.coredata.dao.MunchkinDao
-import com.volkovmedia.component.coredata.model.entity.Munchkin
+import com.volkovmedia.component.data.dao.MunchkinDao
+import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.feature.munchkinlist.domain.MunchkinListRepository
 import io.reactivex.Completable
 

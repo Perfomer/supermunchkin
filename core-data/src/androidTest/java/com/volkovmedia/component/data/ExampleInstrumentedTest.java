@@ -1,4 +1,4 @@
-package com.volkovmedia.component.coredata;
+package com.volkovmedia.component.data;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;

@@ -1,7 +1,7 @@
 package com.volkovmedia.feature.munchkinlist.domain
 
-import com.volkovmedia.component.coredata.model.MunchkinGender
-import com.volkovmedia.component.coredata.model.entity.Munchkin
+import com.volkovmedia.component.data.model.MunchkinGender
+import com.volkovmedia.component.data.model.entity.Munchkin
 
 internal class MunchkinListInteractor(private val repository: MunchkinListRepository) {
 

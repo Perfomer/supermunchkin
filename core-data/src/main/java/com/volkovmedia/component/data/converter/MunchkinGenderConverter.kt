@@ -1,7 +1,7 @@
-package com.volkovmedia.component.coredata.converter
+package com.volkovmedia.component.data.converter
 
 import androidx.room.TypeConverter
-import com.volkovmedia.component.coredata.model.MunchkinGender
+import com.volkovmedia.component.data.model.MunchkinGender
 
 internal class MunchkinGenderConverter {
 

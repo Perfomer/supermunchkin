@@ -1,6 +1,6 @@
 package com.volkovmedia.feature.teamlist.presentation.mvi
 
-import com.volkovmedia.component.coredata.model.entity.Team
+import com.volkovmedia.component.data.model.entity.Team
 
 internal sealed class TeamListIntent {
 
