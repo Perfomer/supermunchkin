@@ -44,20 +44,10 @@ dependencies {
     implementation deps.androidx_appcompat
     implementation deps.androidx_material
     implementation deps.androidx_annotation
+    implementation deps.androidx_fragment_ktx
     implementation deps.androidx_constraintlayout
     implementation deps.androidx_recyclerview
     implementation deps.androidx_lifecycle_extensions
-    implementation deps.androidx_fragment_ktx
-    implementation deps.androidx_core_ktx
 
-    implementation deps.rxjava2
-    implementation deps.rxjava2_rxkotlin
-    implementation deps.rxjava2_rxandroid
-
-    implementation deps.koin_android
-    implementation deps.koin_androidx_viewmodel
-
-    implementation project(":commons")
-    implementation project(':core-data')
-    implementation project(':core-resource')
+    implementation project(":core-data")
 }

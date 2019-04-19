@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="munchkin_class">Класс</string>
+
+    <string name="munchkin_class_wizard">Волшебник</string>
+    <string name="munchkin_class_cleric">Клирик</string>
+    <string name="munchkin_class_thief">Вор</string>
+    <string name="munchkin_class_warrior">Воин</string>
+
+    <string name="munchkin_race">Раса</string>
+
+    <string name="munchkin_race_human">Человек</string>
+    <string name="munchkin_race_halfling">Хаффлинг</string>
+    <string name="munchkin_race_dwarf">Дварф</string>
+    <string name="munchkin_race_orc">Орк</string>
+    <string name="munchkin_race_elf">Эльф</string>
+
+</resources>

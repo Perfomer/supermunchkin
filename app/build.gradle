@@ -61,6 +61,7 @@ dependencies {
 
     implementation project(":commons")
     implementation project(':core-data')
+    implementation project(':core-resource')
 
     implementation project(':teamlist')
     implementation project(":munchkinlist")
