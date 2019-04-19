@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply from: '../versions.gradle'
@@ -7,7 +7,6 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.volkovmedia.supermunchkin"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -42,15 +41,14 @@ dependencies {
     androidTestImplementation deps.androidx_test_ext_junit
     androidTestImplementation deps.androidx_test_espresso_core
 
-    implementation deps.facebook_stetho
-
     implementation deps.androidx_appcompat
     implementation deps.androidx_material
     implementation deps.androidx_annotation
-    implementation deps.androidx_fragment_ktx
     implementation deps.androidx_constraintlayout
     implementation deps.androidx_recyclerview
     implementation deps.androidx_lifecycle_extensions
+    implementation deps.androidx_fragment_ktx
+    implementation deps.androidx_core_ktx
 
     implementation deps.rxjava2
     implementation deps.rxjava2_rxkotlin
@@ -61,7 +59,4 @@ dependencies {
 
     implementation project(":commons")
     implementation project(":coredata")
-
-    implementation project(':teamlist')
-    implementation project(":munchkinlist")
 }
