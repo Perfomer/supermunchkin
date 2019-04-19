@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/munchkinlist_item_card"
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:foreground="?selectableItemBackgroundBorderless"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="8dp"
+        app:cardUseCompatPadding="false"
+        tools:background="@android:color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/munchkinlist_item_gender"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_gender"
+                android:gravity="center"
+                android:padding="6dp"
+                android:src="@drawable/ic_male"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:tint="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/munchkinlist_item_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/munchkinlist_item_gender"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/munchkinlist_item_gender"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_gender"
+                tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/munchkinlist_item_race"
+                android:layout_width="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/munchkinlist_item_name"
+                app:layout_constraintStart_toStartOf="@+id/munchkinlist_item_name"
+                app:layout_constraintTop_toBottomOf="@+id/munchkinlist_item_name"
+                tools:text="Человек, Орк" />
+
+            <TextView
+                android:id="@+id/munchkinlist_item_class"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/munchkinlist_item_race"
+                app:layout_constraintStart_toStartOf="@+id/munchkinlist_item_race"
+                app:layout_constraintTop_toBottomOf="@+id/munchkinlist_item_race"
+                tools:text="Клирик, Вор" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Уровень"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toTopOf="@+id/munchkinlist_item_level_background"
+                app:layout_constraintEnd_toEndOf="@+id/munchkinlist_item_level_background"
+                app:layout_constraintStart_toStartOf="@+id/munchkinlist_item_level_background"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_level_background" />
+
+            <ImageView
+                android:id="@+id/munchkinlist_item_level_background"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_circle"
+                android:padding="16dp"
+                android:src="@drawable/ic_helmet"
+                android:tint="#C4C4C4"
+                app:layout_constraintBottom_toBottomOf="@+id/munchkinlist_item_level"
+                app:layout_constraintEnd_toEndOf="@+id/munchkinlist_item_level"
+                app:layout_constraintStart_toStartOf="@+id/munchkinlist_item_level"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_level" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/munchkinlist_item_level_down"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="48dp"
+                android:text="—"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/munchkinlist_item_class" />
+
+            <TextView
+                android:id="@+id/munchkinlist_item_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/munchkinlist_item_level_down"
+                app:layout_constraintStart_toEndOf="@+id/munchkinlist_item_level_down"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_level_down"
+                tools:text="10" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/munchkinlist_item_level_up"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:text="+"
+                app:cornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/munchkinlist_item_level_down"
+                app:layout_constraintStart_toEndOf="@+id/munchkinlist_item_level"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_level_down" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Снаряжение"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toTopOf="@+id/munchkinlist_item_gear_background"
+                app:layout_constraintEnd_toEndOf="@+id/munchkinlist_item_gear_background"
+                app:layout_constraintStart_toStartOf="@+id/munchkinlist_item_gear_background"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_gear_background" />
+
+            <ImageView
+                android:id="@+id/munchkinlist_item_gear_background"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_circle"
+                android:padding="16dp"
+                android:src="@drawable/ic_sword"
+                android:tint="#C4C4C4"
+                app:layout_constraintBottom_toBottomOf="@+id/munchkinlist_item_gear"
+                app:layout_constraintEnd_toEndOf="@+id/munchkinlist_item_gear"
+                app:layout_constraintStart_toStartOf="@+id/munchkinlist_item_gear"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_gear" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/munchkinlist_item_gear_down"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="48dp"
+                android:text="—"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                android:layout_marginStart="32dp"
+                app:layout_constraintStart_toEndOf="@+id/munchkinlist_item_level_up"
+                app:layout_constraintTop_toBottomOf="@+id/munchkinlist_item_class" />
+
+            <TextView
+                android:id="@+id/munchkinlist_item_gear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/munchkinlist_item_gear_down"
+                app:layout_constraintStart_toEndOf="@+id/munchkinlist_item_gear_down"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_gear_down"
+                tools:text="10" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/munchkinlist_item_gear_up"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:text="+"
+                app:cornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/munchkinlist_item_gear_down"
+                app:layout_constraintStart_toEndOf="@+id/munchkinlist_item_gear"
+                app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_gear_down" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>
