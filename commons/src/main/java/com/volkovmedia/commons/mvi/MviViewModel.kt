@@ -23,7 +23,7 @@ abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscriptio
     val state: ObservableSource<State>
         get() = stateSubject
 
-    private val intentsSubject = PublishSubject.create<Intent>()
+    private val intentSubject = PublishSubject.create<Intent>()
     private val subscriptionSubject = PublishSubject.create<Subscription>()
     private val stateSubject = BehaviorSubject.create<State>()
 
@@ -32,7 +32,7 @@ abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscriptio
     init {
         stateSubject.onNext(initialState)
 
-        disposable += intentsSubject
+        disposable += intentSubject
             .flatWithLatestFrom(state, ::onIntentReceived)
             .withLatestFrom(state, ::onActionReceived)
             .distinctUntilChanged()
@@ -45,7 +45,7 @@ abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscriptio
     }
 
 
-    fun postIntent(intent: Intent) = intentsSubject.onNext(intent)
+    fun postIntent(intent: Intent) = intentSubject.onNext(intent)
 
 
     protected open fun act(state: State, intent: Intent): Observable<out Action> = Observable.empty()

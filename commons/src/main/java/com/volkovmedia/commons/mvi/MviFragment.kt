@@ -35,7 +35,7 @@ abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
 
     override fun onResume() {
         super.onResume()
-        initialIntent?.let { postIntent(it) }
+        initialIntent?.let(::postIntent)
     }
 
     override fun onStop() {
