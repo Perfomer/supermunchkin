@@ -64,7 +64,8 @@ dependencies {
     implementation project(':core-resource')
 
     implementation project(':feature-teamlist')
+    implementation project(':feature-teamedit')
     implementation project(':feature-munchkinlist')
-    implementation project(':feature-munchkinprofile')
+    implementation project(':feature-munchkinedit')
     implementation project(':feature-battle')
 }
