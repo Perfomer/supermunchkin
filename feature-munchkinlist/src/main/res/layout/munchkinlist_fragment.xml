@@ -16,7 +16,6 @@
             android:background="@color/primary"
             android:elevation="1dp"
             app:title="Команды"
-            app:titleTextColor="@android:color/white"
             tools:layout_height="58dp" />
 
     </com.google.android.material.appbar.AppBarLayout>
