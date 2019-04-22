@@ -4,6 +4,8 @@ interface MunchkinListNavigator {
 
     fun navigateToBattle()
 
+    fun navigateToTeamEdit(teamId: Long)
+
     fun navigateToMunchkinEdit(munchkinId: Long)
 
 }

@@ -34,12 +34,9 @@ class MainActivity : AppCompatActivity(),
         }
     }
 
-    override fun navigateToTeamCreate() {
-        supportFragmentManager.transaction {
-            replace(R.id.container, get(FRAGMENT_TEAMEDIT) { parametersOf(null)})
-            addToBackStack(FRAGMENT_TEAMEDIT)
-        }
-    }
+    override fun navigateToTeamCreate() = navigateToTeamEditScreen(null)
+
+    override fun navigateToTeamEdit(teamId: Long) = navigateToTeamEditScreen(teamId)
 
     override fun navigateToBattle() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -47,6 +44,14 @@ class MainActivity : AppCompatActivity(),
 
     override fun navigateToMunchkinEdit(munchkinId: Long) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+
+    private fun navigateToTeamEditScreen(teamId: Long?) {
+        supportFragmentManager.transaction {
+            replace(R.id.container, get(FRAGMENT_TEAMEDIT) { parametersOf(teamId) })
+            addToBackStack(FRAGMENT_TEAMEDIT)
+        }
     }
 
 }

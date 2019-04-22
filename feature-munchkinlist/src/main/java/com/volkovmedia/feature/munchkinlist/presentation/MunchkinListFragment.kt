@@ -1,6 +1,7 @@
 package com.volkovmedia.feature.munchkinlist.presentation
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +25,8 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
 
     override val layoutResource = R.layout.munchkinlist_fragment
 
+    override val menuResource = R.menu.munchkinlist_menu
+
 
     private val navigator by lazy { activity as MunchkinListNavigator }
 
@@ -44,6 +47,15 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
         munchkinlist_recycler.adapter = adapter
 
         munchkinlist_fab.onClick = { navigator.navigateToBattle() }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.munchkinlist_editteam -> currentState?.let { navigator.navigateToTeamEdit(it.teamDto.id) }
+            else -> return super.onOptionsItemSelected(item)
+        }
+
+        return true
     }
 
     override fun render(state: MunchkinListState) {
