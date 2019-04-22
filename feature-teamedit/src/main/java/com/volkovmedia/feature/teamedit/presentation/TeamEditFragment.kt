@@ -26,9 +26,7 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
 import java.util.concurrent.TimeUnit
 
-internal class TeamEditFragment : MviFragment<TeamEditIntent, TeamEditState, TeamEditSubscription>(
-    initialIntent = LoadData
-) {
+internal class TeamEditFragment : MviFragment<TeamEditIntent, TeamEditState, TeamEditSubscription>() {
 
     override val layoutResource = R.layout.teamedit_fragment
 

@@ -19,9 +19,13 @@ internal class TeamEditViewModel(
     initialState = TeamEditState()
 ) {
 
+    init {
+        postIntent(TeamEditIntent.LoadData)
+    }
+
     override fun act(state: TeamEditState, intent: TeamEditIntent) = when (intent) {
         TeamEditIntent.LoadData -> {
-            if (teamId == null) Observable.empty()
+            if (teamId == null || teamId == 0L) Observable.empty()
             else interactor.getTeam(teamId)
                 .flatMap<TeamEditAction> { state.toShowDataAction(it.team, it.participants) }
                 .startWith(DataLoadingStarted)

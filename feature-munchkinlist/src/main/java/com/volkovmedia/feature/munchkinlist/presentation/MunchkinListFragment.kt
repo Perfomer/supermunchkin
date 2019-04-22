@@ -43,6 +43,9 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        appCompatActivity.setSupportActionBar(munchkinlist_toolbar)
+        appCompatActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         munchkinlist_recycler.layoutManager = LinearLayoutManager(context)
         munchkinlist_recycler.adapter = adapter
 

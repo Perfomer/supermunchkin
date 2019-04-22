@@ -2,6 +2,7 @@ package com.volkovmedia.component.common.view
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 @Suppress("unused")
@@ -10,6 +11,9 @@ abstract class BaseFragment : Fragment() {
     protected open val layoutResource: Int? = null
 
     protected open val menuResource: Int? = null
+
+    protected val appCompatActivity: AppCompatActivity
+        get() = activity as AppCompatActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
