@@ -53,6 +53,7 @@ dependencies {
     implementation deps.rxjava2
     implementation deps.rxjava2_rxkotlin
     implementation deps.rxjava2_rxandroid
+    implementation deps.rxjava2_rxbinding
 
     implementation deps.koin_android
     implementation deps.koin_androidx_viewmodel

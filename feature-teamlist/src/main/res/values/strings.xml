@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">teamslist</string>
+    <string name="teamlist_game_finished">Игра окончена</string>
+    <string name="teamlist_game_inprogress">Игра в процессе</string>
+    <string name="teamlist_noparticipants">"Участников ещё нет"</string>
 </resources>

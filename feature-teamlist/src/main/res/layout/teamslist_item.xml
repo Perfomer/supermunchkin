@@ -12,26 +12,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:foreground="?selectableItemBackgroundBorderless"
         app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
-        android:foreground="?selectableItemBackgroundBorderless"
         app:cardMaxElevation="8dp"
         app:cardUseCompatPadding="false"
         tools:background="@android:color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/teamslist_item_id"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/bg_teamid"
                 android:gravity="center"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="1" />
@@ -44,17 +46,29 @@
                 android:layout_marginEnd="16dp"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/teamslist_item_date"
                 app:layout_constraintStart_toEndOf="@+id/teamslist_item_id"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/teamslist_item_id"
                 tools:text="Team name #2" />
+
+            <TextView
+                android:id="@+id/teamslist_item_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                app:layout_constraintEnd_toEndOf="@+id/teamslist_item_name"
+                app:layout_constraintStart_toStartOf="@+id/teamslist_item_name"
+                app:layout_constraintTop_toBottomOf="@+id/teamslist_item_name"
+                tools:text="Игра закончена" />
 
             <TextView
                 android:id="@+id/teamslist_item_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/teamslist_item_id"
                 tools:text="@tools:sample/date/ddmmyy" />
 
             <TextView
@@ -62,12 +76,31 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/bg_square_topstraight"
+                android:backgroundTint="@color/blue_light"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:paddingStart="64dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/primary_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/teamslist_item_name"
-                app:layout_constraintTop_toBottomOf="@+id/teamslist_item_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/teamslist_item_status"
                 tools:text="John, Anna, Gazebo, Katya" />
+
+            <ImageView
+                android:id="@+id/teamslist_item_participants_icon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="21dp"
+                android:src="@drawable/ic_team"
+                android:tint="@color/primary"
+                app:layout_constraintBottom_toBottomOf="@+id/teamslist_item_participants"
+                app:layout_constraintStart_toStartOf="@+id/teamslist_item_participants"
+                app:layout_constraintTop_toTopOf="@+id/teamslist_item_participants" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

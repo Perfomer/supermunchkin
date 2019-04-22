@@ -15,5 +15,7 @@ data class Team(
 
     val maxLevel: Int = 10,
 
+    val isGameFinished: Boolean = false,
+
     val lastGameDate: Date = currentDate
 ) : KeyEntity<Long>
