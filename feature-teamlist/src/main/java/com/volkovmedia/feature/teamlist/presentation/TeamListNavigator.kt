@@ -4,4 +4,6 @@ interface TeamListNavigator {
 
     fun navigateToTeam(teamId: Long)
 
+    fun navigateToTeamCreate()
+
 }

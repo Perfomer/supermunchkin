@@ -17,12 +17,6 @@ internal class TeamListViewModel(
             .map<TeamListAction> { TeamListAction.DataShowRequested(it) }
             .startWith(TeamListAction.DataLoadingStarted)
 
-        is TeamListIntent.CreateTeam -> interactor.createTeam(intent.name)
-            .andThen(super.act(state, intent))
-
-        is TeamListIntent.UpdateTeam -> interactor.updateTeam(intent.team)
-            .andThen(super.act(state, intent))
-
         is TeamListIntent.RemoveTeam -> interactor.removeTeam(intent.team)
             .andThen(super.act(state, intent))
     }

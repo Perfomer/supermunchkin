@@ -13,10 +13,10 @@ interface TeamDao : BaseDao<Team> {
     fun getTeams(): Observable<List<Team>>
 
     @Query("SELECT * FROM Team ORDER BY lastGameDate DESC")
-    fun getTeamsWithParticipants(): Observable<Team>
+    fun getTeamsWithParticipants(): Observable<List<TeamDto>>
 
     @Query("SELECT * FROM Team WHERE id = :teamId ORDER BY lastGameDate DESC")
-    fun getTeam(teamId: Long): Observable<List<TeamDto>>
+    fun getTeam(teamId: Long): Observable<Team>
 
     @Query("SELECT * FROM Team WHERE id = :teamId ORDER BY lastGameDate DESC")
     fun getTeamWithParticipants(teamId: Long): Observable<TeamDto>
