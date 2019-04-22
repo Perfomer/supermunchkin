@@ -3,7 +3,7 @@ package com.volkovmedia.feature.munchkinlist.presentation.recycler
 import android.view.View
 import com.volkovmedia.component.common.view.recycler.BindableEntityAdapter
 import com.volkovmedia.feature.munchkinlist.R
-import com.volkovmedia.feature.munchkinlist.domain.MunchkinDto
+import com.volkovmedia.feature.munchkinlist.domain.model.MunchkinDto
 
 internal class MunchkinListAdapter(
     private val onClick: (MunchkinDto) -> Unit,
@@ -18,9 +18,7 @@ internal class MunchkinListAdapter(
     )
 
 
-    private fun onClick(position: Int) {
-        onClick.invoke(items[position])
-    }
+    private fun onClick(position: Int) = onClick.invoke(items[position])
 
     private fun onLevelRaiseUpClick(position: Int, raiseUp: Boolean) {
         onLevelRaiseUpClick.invoke(items[position], raiseUp)

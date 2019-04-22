@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
 val munchkinListModule = module {
-    single { MunchkinListDataSource(get()) } bind MunchkinListRepository::class
+    single { MunchkinListDataSource(get(), get()) } bind MunchkinListRepository::class
     single { MunchkinListInteractor(get()) }
 
     viewModel { (teamId: Long) -> MunchkinListViewModel(teamId, get()) }

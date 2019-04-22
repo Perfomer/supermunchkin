@@ -7,10 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
 import com.volkovmedia.component.common.util.onClick
-import com.volkovmedia.component.data.model.MunchkinGender
 import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.feature.munchkinlist.R
-import com.volkovmedia.feature.munchkinlist.domain.MunchkinDto
+import com.volkovmedia.feature.munchkinlist.domain.model.MunchkinDto
 import com.volkovmedia.feature.munchkinlist.presentation.mvi.MunchkinListIntent
 import com.volkovmedia.feature.munchkinlist.presentation.mvi.MunchkinListIntent.UpdateMunchkin
 import com.volkovmedia.feature.munchkinlist.presentation.mvi.MunchkinListState
@@ -24,6 +23,9 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
 ) {
 
     override val layoutResource = R.layout.munchkinlist_fragment
+
+
+    private val navigator by lazy { activity as MunchkinListNavigator }
 
     private val teamId by argumentLong(KEY_TEAMID)
 
@@ -41,29 +43,34 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
         munchkinlist_recycler.layoutManager = LinearLayoutManager(context)
         munchkinlist_recycler.adapter = adapter
 
-        munchkinlist_fab.onClick = { postIntent(MunchkinListIntent.CreateMunchkin("asdsa", MunchkinGender.MALE)) }
+        munchkinlist_fab.onClick = { navigator.navigateToBattle() }
     }
 
     override fun render(state: MunchkinListState) {
+        val teamDto = state.teamDto
+
+        munchkinlist_toolbar.title = teamDto.team.name
+        adapter.items = teamDto.participants
+
         munchkinlist_progressbar.isVisible = state.isLoading
-        adapter.items = state.payload
     }
 
-    private fun onMunchkinClick(munchkin: MunchkinDto) {}
+    private fun onMunchkinClick(munchkin: MunchkinDto) = navigator.navigateToMunchkinEdit(munchkin.id)
 
     private fun onMunchkinLevelRaiseUpClick(munchkinDto: MunchkinDto, raiseUp: Boolean) = munchkinDto.postUpdate {
         val modificator = if (raiseUp) 1 else -1
-        copy(level = level + modificator)
+        this.copy(level = level + modificator)
     }
 
     private fun onMunchkinGearRaiseUpClick(munchkinDto: MunchkinDto, raiseUp: Boolean) = munchkinDto.postUpdate {
         val modificator = if (raiseUp) 1 else -1
-        copy(gear = gear + modificator)
+        this.copy(gear = gear + modificator)
     }
 
-    private fun MunchkinDto.postUpdate(body: Munchkin.() -> Munchkin) {
-        postIntent(UpdateMunchkin(body.invoke(munchkin)))
-    }
+    private fun MunchkinDto.postUpdate(body: Munchkin.() -> Munchkin) = postIntent(
+        UpdateMunchkin(body.invoke(munchkin))
+    )
+
 
     internal companion object {
 

@@ -13,9 +13,10 @@
             android:id="@+id/munchkinlist_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/white"
+            android:background="@color/primary"
             android:elevation="1dp"
             app:title="Команды"
+            app:titleTextColor="@android:color/white"
             tools:layout_height="58dp" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -23,7 +24,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_marginTop="56dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/munchkinlist_recycler"
@@ -39,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_plus" />
+        app:srcCompat="@drawable/ic_sword" />
 
     <ProgressBar
         android:id="@+id/munchkinlist_progressbar"

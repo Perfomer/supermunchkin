@@ -9,10 +9,10 @@ import com.volkovmedia.component.data.model.entity.Team
 
 data class TeamDto(
     @Embedded
-    val team: Team,
+    val team: Team = Team(),
 
     @Relation(parentColumn = "id", entityColumn = "teamId")
-    val participants: List<Munchkin>
+    val participants: List<Munchkin> = emptyList()
 ) : KeyEntity<Long> {
 
     @Ignore

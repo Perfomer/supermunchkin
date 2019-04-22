@@ -14,15 +14,9 @@ internal class MunchkinListViewModel(
 ) {
 
     override fun act(state: MunchkinListState, intent: MunchkinListIntent) = when (intent) {
-        MunchkinListIntent.LoadData -> interactor.getMunchkins(teamId)
+        MunchkinListIntent.LoadData -> interactor.getTeam(teamId)
             .map<MunchkinListAction> { MunchkinListAction.DataShowRequested(it) }
             .startWith(MunchkinListAction.DataLoadingStarted)
-
-        is MunchkinListIntent.CreateMunchkin -> interactor.createMunchkin(
-            teamId = teamId,
-            name = intent.name,
-            gender = intent.gender
-        ).andThen(super.act(state, intent))
 
         is MunchkinListIntent.UpdateMunchkin -> interactor.putMunchkin(intent.munchkin)
             .andThen(super.act(state, intent))
@@ -37,7 +31,7 @@ internal class MunchkinListViewModel(
         )
 
         is MunchkinListAction.DataShowRequested -> oldState.copy(
-            isLoading = false, payload = action.payload
+            isLoading = false, teamDto = action.teamDto
         )
     }
 

@@ -26,14 +26,14 @@ internal class TeamEditDataSource(
     }
 
     override fun editTeam(teamDto: TeamDto) = Single.fromCallable {
-        val teamId = teamDao.update(teamDto.team)
+        teamDao.update(teamDto.team)
 
         teamDto.participants.forEach {
             if (it.id == 0L) munchkinDao.insert(it)
             else munchkinDao.update(it)
         }
 
-        return@fromCallable teamId
+        return@fromCallable teamDto.id
     }
 
 }

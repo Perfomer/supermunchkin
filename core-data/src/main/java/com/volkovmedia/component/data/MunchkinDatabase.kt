@@ -15,7 +15,7 @@ import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.component.data.model.entity.Team
 
 @Database(
-    version = 3,
+    version = 4,
     exportSchema = true,
     entities = [
         Munchkin::class,

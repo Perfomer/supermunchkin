@@ -1,20 +1,18 @@
 package com.volkovmedia.feature.munchkinlist.domain
 
-import com.volkovmedia.component.data.model.MunchkinGender
 import com.volkovmedia.component.data.model.entity.Munchkin
+import com.volkovmedia.feature.munchkinlist.domain.model.LocalTeamDto
+import com.volkovmedia.feature.munchkinlist.domain.model.MunchkinDto
 
 internal class MunchkinListInteractor(private val repository: MunchkinListRepository) {
 
-    fun getMunchkins(teamId: Long) = repository.getMunchkins(teamId)
-        .map { it.map { MunchkinDto(it, false) } }
+    fun getTeam(teamId: Long) = repository.getTeam(teamId)
+        .map {
+            val leader = it.participants.maxBy { it.strength }
+            val newParticipants = it.participants.map { MunchkinDto(it, it.id == leader?.id) }
 
-    fun createMunchkin(teamId: Long, name: String, gender: MunchkinGender) = repository.createMunchkin(
-        Munchkin(
-            teamId = teamId,
-            name = name,
-            gender = gender
-        )
-    )
+            return@map LocalTeamDto(team = it.team, participants = newParticipants)
+        }
 
     fun putMunchkin(munchkin: Munchkin) = repository.updateMunchkin(munchkin)
 
