@@ -65,7 +65,7 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
         postIntent(UpdateMunchkin(body.invoke(munchkin)))
     }
 
-    companion object {
+    internal companion object {
 
         private const val KEY_TEAMID = "teamId"
 

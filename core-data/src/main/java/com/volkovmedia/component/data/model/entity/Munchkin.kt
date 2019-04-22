@@ -1,10 +1,7 @@
 package com.volkovmedia.component.data.model.entity
 
-import androidx.room.Entity
-import androidx.room.ForeignKey
+import androidx.room.*
 import androidx.room.ForeignKey.CASCADE
-import androidx.room.Ignore
-import androidx.room.PrimaryKey
 import com.volkovmedia.component.common.KeyEntity
 import com.volkovmedia.component.data.model.MunchkinClass
 import com.volkovmedia.component.data.model.MunchkinGender
@@ -16,7 +13,8 @@ import com.volkovmedia.component.data.model.MunchkinRace
         parentColumns = ["id"],
         childColumns = ["teamId"],
         onDelete = CASCADE
-    )]
+    )],
+    indices = [Index(value = ["teamId", "name"], unique = true)]
 )
 data class Munchkin(
     @PrimaryKey(autoGenerate = true)

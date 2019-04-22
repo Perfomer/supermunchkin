@@ -52,7 +52,7 @@ abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscriptio
 
     protected open fun reduce(oldState: State, action: Action): State = oldState
 
-    protected open fun publishSubscription(action: Action, state: State): Subscription? = null
+    protected open fun publishSubscription(state: State, action: Action): Subscription? = null
 
 
     private fun onIntentReceived(intent: Intent, state: State) = act(state, intent)
@@ -61,7 +61,7 @@ abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscriptio
 
     private fun onActionReceived(action: Action, oldState: State): State {
         val newState = reduce(oldState, action)
-        val subscription = publishSubscription(action, newState)
+        val subscription = publishSubscription(newState, action)
 
         subscription?.let(subscriptionSubject::onNext)
 

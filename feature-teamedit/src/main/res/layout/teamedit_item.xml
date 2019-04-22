@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp">
+
+    <TextView
+        android:id="@+id/teamedit_item_name"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_square"
+        android:backgroundTint="@color/blue_light"
+        android:ellipsize="end"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingStart="52dp"
+        android:paddingEnd="32dp"
+        android:textColor="@color/blue_dark"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/full_names" />
+
+    <ImageView
+        android:id="@+id/teamedit_item_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_square"
+        android:backgroundTint="@color/blue"
+        android:padding="7dp"
+        android:src="@drawable/ic_male"
+        android:tint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/teamedit_item_name"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/teamedit_item_name"
+        app:layout_constraintTop_toTopOf="@+id/teamedit_item_name" />
+
+    <ImageView
+        android:id="@+id/teamedit_item_delete"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_delete"
+        android:tint="@color/blue"
+        app:layout_constraintBottom_toBottomOf="@+id/teamedit_item_name"
+        app:layout_constraintEnd_toEndOf="@+id/teamedit_item_name"
+        app:layout_constraintTop_toTopOf="@+id/teamedit_item_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

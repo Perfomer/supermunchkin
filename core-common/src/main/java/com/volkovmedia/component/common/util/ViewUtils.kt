@@ -5,6 +5,8 @@ import androidx.annotation.LayoutRes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.annotation.ColorRes
 import androidx.fragment.app.Fragment
 
 var View.onClick: () -> Unit
@@ -29,4 +31,12 @@ fun Context.inflate(@LayoutRes resource: Int, root: ViewGroup? = null, attachToR
 
 fun View.inflate(@LayoutRes resource: Int, root: ViewGroup? = null, attachToRoot: Boolean = false): View {
     return context.inflate(resource, root, attachToRoot)
+}
+
+fun View.setBackgroundTint(@ColorRes colorRes: Int) {
+    backgroundTintList = resources.getColorStateList(colorRes)
+}
+
+fun ImageView.setTint(@ColorRes colorRes: Int) {
+    imageTintList = resources.getColorStateList(colorRes)
 }

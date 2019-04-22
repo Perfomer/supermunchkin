@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_small_plus" />
+        app:srcCompat="@drawable/ic_plus" />
 
     <ProgressBar
         android:id="@+id/teamslist_progressbar"

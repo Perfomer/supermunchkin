@@ -7,12 +7,18 @@ import com.volkovmedia.component.data.model.entity.Team
 import io.reactivex.Observable
 
 @Dao
-interface TeamDao: BaseDao<Team> {
+interface TeamDao : BaseDao<Team> {
 
     @Query("SELECT * FROM Team ORDER BY lastGameDate DESC")
     fun getTeams(): Observable<List<Team>>
 
     @Query("SELECT * FROM Team ORDER BY lastGameDate DESC")
-    fun getTeamsWithParticipants(): Observable<List<TeamDto>>
+    fun getTeamsWithParticipants(): Observable<Team>
+
+    @Query("SELECT * FROM Team WHERE id = :teamId ORDER BY lastGameDate DESC")
+    fun getTeam(teamId: Long): Observable<List<TeamDto>>
+
+    @Query("SELECT * FROM Team WHERE id = :teamId ORDER BY lastGameDate DESC")
+    fun getTeamWithParticipants(teamId: Long): Observable<TeamDto>
 
 }
