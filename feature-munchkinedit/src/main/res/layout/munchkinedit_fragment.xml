@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/munchkinedit_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            android:elevation="1dp"
+            app:title="Редактировать манчкина"
+            tools:layout_height="58dp"
+            tools:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue_lightest"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_marginTop="56dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="6dp"
+                tools:background="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Имя манчкина:"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:boxStrokeColor="@color/accent"
+                        app:boxStrokeWidth="2dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/munchkinedit_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="6dp"
+                tools:background="@android:color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/munchkinedit_strength_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Сила:"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/munchkinedit_item_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_strength_title">
+
+                        <TextView
+                            android:id="@+id/munchkinedit_item_level_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Уровень"
+                            android:textColor="@color/primary_dark"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/munchkinedit_item_level_circle"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/bg_circle"
+                            android:backgroundTint="@color/blue_light"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_item_level_title" />
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_helmet"
+                            android:tint="@color/blue_light_bright"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level_circle" />
+
+                        <TextView
+                            android:id="@+id/munchkinedit_item_level_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level_circle"
+                            tools:text="12" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/munchkinedit_item_level_minus"
+                            android:layout_width="40dp"
+                            android:layout_height="32dp"
+                            android:background="@color/accent"
+                            android:text="-"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            app:cornerRadius="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintEnd_toStartOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level_circle" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/munchkinedit_item_level_plus"
+                            android:layout_width="40dp"
+                            android:layout_height="32dp"
+                            android:background="@color/accent"
+                            android:text="+"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            app:cornerRadius="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintStart_toEndOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level_circle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level">
+
+                        <TextView
+                            android:id="@+id/munchkinedit_item_strength_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Сила"
+                            android:textColor="@color/text_primary"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_strength_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_strength_circle"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/munchkinedit_item_strength_circle"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:background="@drawable/bg_circle"
+                            android:backgroundTint="@color/grey_light"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_item_strength_title" />
+
+                        <TextView
+                            android:id="@+id/munchkinedit_item_strength_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_strength_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_strength_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_strength_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_strength_circle"
+                            tools:text="12" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_strength_title">
+
+                        <TextView
+                            android:id="@+id/munchkinedit_item_gear_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Снаряжение"
+                            android:textColor="@color/primary_dark"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/munchkinedit_item_gear_circle"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/bg_circle"
+                            android:backgroundTint="@color/blue_light"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_item_gear_title" />
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_sword"
+                            android:tint="@color/blue_light_bright"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_gear_circle" />
+
+                        <TextView
+                            android:id="@+id/munchkinedit_item_gear_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_gear_circle"
+                            tools:text="12" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/munchkinedit_item_gear_minus"
+                            android:layout_width="40dp"
+                            android:layout_height="32dp"
+                            android:background="@color/accent"
+                            android:text="-"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            app:cornerRadius="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintEnd_toStartOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_gear_circle" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/munchkinedit_item_gear_plus"
+                            android:layout_width="40dp"
+                            android:layout_height="32dp"
+                            android:background="@color/accent"
+                            android:text="+"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            app:cornerRadius="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintStart_toEndOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_gear_circle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="6dp"
+                tools:background="@android:color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/munchkinedit_race_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Раса:"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <CheckBox
+                        android:id="@+id/munchkinedit_race_halfblood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Полукровка"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Spinner
+                        android:id="@+id/munchkinedit_race_first"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_square_stroked"
+                        android:entries="asd"
+                        android:padding="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_race_halfblood" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/ic_arrow_down"
+                        app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_race_first"
+                        app:layout_constraintEnd_toEndOf="@+id/munchkinedit_race_first"
+                        app:layout_constraintTop_toTopOf="@+id/munchkinedit_race_first" />
+
+                    <Spinner
+                        android:id="@+id/munchkinedit_race_second"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_square_stroked"
+                        android:entries="asd"
+                        android:padding="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_race_first" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/ic_arrow_down"
+                        app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_race_second"
+                        app:layout_constraintEnd_toEndOf="@+id/munchkinedit_race_second"
+                        app:layout_constraintTop_toTopOf="@+id/munchkinedit_race_second" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="6dp"
+                tools:background="@android:color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/munchkinedit_class_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Класс:"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <CheckBox
+                        android:id="@+id/munchkinedit_class_supermunchkin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Суперманчкин"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Spinner
+                        android:id="@+id/munchkinedit_class_first"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_square_stroked"
+                        android:entries="asd"
+                        android:padding="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_class_halfblood" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/ic_arrow_down"
+                        app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_class_first"
+                        app:layout_constraintEnd_toEndOf="@+id/munchkinedit_class_first"
+                        app:layout_constraintTop_toTopOf="@+id/munchkinedit_class_first" />
+
+                    <Spinner
+                        android:id="@+id/munchkinedit_class_second"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_square_stroked"
+                        android:entries="asd"
+                        android:padding="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_class_first" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/ic_arrow_down"
+                        app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_class_second"
+                        app:layout_constraintEnd_toEndOf="@+id/munchkinedit_class_second"
+                        app:layout_constraintTop_toTopOf="@+id/munchkinedit_class_second" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/munchkinedit_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_plus" />
+
+    <ProgressBar
+        android:id="@+id/munchkinedit_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

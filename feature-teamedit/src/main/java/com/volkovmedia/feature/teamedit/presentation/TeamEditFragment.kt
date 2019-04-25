@@ -46,13 +46,14 @@ internal class TeamEditFragment : MviFragment<TeamEditIntent, TeamEditState, Tea
         )
 
         teamedit_toolbar.attachToActivity()
-        teamedit_participants.init(adapter = adapter)
+        teamedit_participants.init(adapter)
 
         teamedit_participants_add.onClick = { /* todo show dialog */ }
         teamedit_fab.onClick = { postIntent(TeamEditIntent.SaveTeamDetails) }
 
         disposable += teamedit_name.textChanges()
             .debounce(500, TimeUnit.MILLISECONDS)
+            .distinctUntilChanged()
             .subscribeBy { postIntent(TeamEditIntent.EditTeamName(it.toString())) }
     }
 

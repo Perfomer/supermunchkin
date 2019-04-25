@@ -44,8 +44,8 @@ fun ImageView.setTint(@ColorRes colorRes: Int) {
 }
 
 fun RecyclerView.init(
-    layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context),
-    adapter: RecyclerView.Adapter<*>
+    adapter: RecyclerView.Adapter<*>,
+    layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context)
 ) {
     this.layoutManager = layoutManager
     this.adapter = adapter

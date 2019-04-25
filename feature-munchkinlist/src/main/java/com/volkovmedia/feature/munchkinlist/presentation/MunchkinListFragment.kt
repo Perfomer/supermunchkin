@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.core.view.isVisible
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
 import com.volkovmedia.component.common.util.init
@@ -45,7 +44,7 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
         super.onViewCreated(view, savedInstanceState)
 
         munchkinlist_toolbar.attachToActivity()
-        munchkinlist_recycler.init(adapter = adapter)
+        munchkinlist_recycler.init(adapter)
 
         munchkinlist_fab.onClick = { navigator.navigateToBattle() }
     }

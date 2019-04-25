@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/munchkinlist_editteam"
-        android:icon="@drawable/ic_edit"
-        android:title="Редактировать команду"
+        android:id="@+id/munchkinedit_kill"
+        android:icon="@drawable/ic_skull"
+        android:title="Убить манчкина"
         app:showAsAction="ifRoom" />
 
 </menu>
