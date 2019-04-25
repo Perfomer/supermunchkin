@@ -7,6 +7,7 @@ import androidx.annotation.MenuRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import io.reactivex.disposables.CompositeDisposable
 
 @Suppress("unused")
 abstract class BaseFragment : Fragment() {
@@ -19,6 +20,8 @@ abstract class BaseFragment : Fragment() {
 
     protected val appCompatActivity: AppCompatActivity
         get() = activity as AppCompatActivity
+
+    protected val disposable by lazy { CompositeDisposable() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,11 @@ abstract class BaseFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         menuResource?.let { inflater.inflate(it, menu) }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        disposable.clear()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -3,7 +3,6 @@ package com.volkovmedia.feature.teamedit.presentation
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.jakewharton.rxbinding3.widget.textChanges
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
@@ -12,14 +11,12 @@ import com.volkovmedia.component.common.util.onClick
 import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.feature.teamedit.R
 import com.volkovmedia.feature.teamedit.presentation.mvi.TeamEditIntent
-import com.volkovmedia.feature.teamedit.presentation.mvi.TeamEditIntent.LoadData
 import com.volkovmedia.feature.teamedit.presentation.mvi.TeamEditIntent.RemoveMunchkin
 import com.volkovmedia.feature.teamedit.presentation.mvi.TeamEditState
 import com.volkovmedia.feature.teamedit.presentation.mvi.TeamEditSubscription
 import com.volkovmedia.feature.teamedit.presentation.mvi.TeamEditSubscription.TeamSavingFailed
 import com.volkovmedia.feature.teamedit.presentation.mvi.TeamEditSubscription.TeamSavingSucceed
 import com.volkovmedia.feature.teamedit.presentation.recycler.TeamEditAdapter
-import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.android.synthetic.main.teamedit_fragment.*
@@ -30,9 +27,6 @@ import java.util.concurrent.TimeUnit
 internal class TeamEditFragment : MviFragment<TeamEditIntent, TeamEditState, TeamEditSubscription>() {
 
     override val layoutResource = R.layout.teamedit_fragment
-
-
-    private val disposable = CompositeDisposable()
 
     private val navigator by lazy { activity as TeamEditNavigator }
 
@@ -60,11 +54,6 @@ internal class TeamEditFragment : MviFragment<TeamEditIntent, TeamEditState, Tea
         disposable += teamedit_name.textChanges()
             .debounce(500, TimeUnit.MILLISECONDS)
             .subscribeBy { postIntent(TeamEditIntent.EditTeamName(it.toString())) }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        disposable.clear()
     }
 
     override fun render(state: TeamEditState) {

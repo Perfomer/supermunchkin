@@ -20,9 +20,6 @@ abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
 
     private val viewModel by lazy { provideViewModel() }
 
-    private val disposable = CompositeDisposable()
-
-
     override fun onStart() {
         super.onStart()
 
@@ -36,12 +33,6 @@ abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
         super.onResume()
         initialIntent?.let(::postIntent)
     }
-
-    override fun onStop() {
-        super.onStop()
-        disposable.clear()
-    }
-
 
     protected abstract fun provideViewModel(): MviViewModel<Intent, *, State, Subscription>
 
