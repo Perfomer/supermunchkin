@@ -7,6 +7,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
+import com.volkovmedia.component.common.util.init
 import com.volkovmedia.component.common.util.onClick
 import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.feature.munchkinlist.R
@@ -43,11 +44,8 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        appCompatActivity.setSupportActionBar(munchkinlist_toolbar)
-        appCompatActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        munchkinlist_recycler.layoutManager = LinearLayoutManager(context)
-        munchkinlist_recycler.adapter = adapter
+        munchkinlist_toolbar.attachToActivity()
+        munchkinlist_recycler.init(adapter = adapter)
 
         munchkinlist_fab.onClick = { navigator.navigateToBattle() }
     }

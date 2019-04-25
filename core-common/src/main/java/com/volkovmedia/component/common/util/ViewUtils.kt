@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.annotation.ColorRes
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 var View.onClick: () -> Unit
     get() = {}
@@ -39,4 +41,12 @@ fun View.setBackgroundTint(@ColorRes colorRes: Int) {
 
 fun ImageView.setTint(@ColorRes colorRes: Int) {
     imageTintList = resources.getColorStateList(colorRes)
+}
+
+fun RecyclerView.init(
+    layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context),
+    adapter: RecyclerView.Adapter<*>
+) {
+    this.layoutManager = layoutManager
+    this.adapter = adapter
 }

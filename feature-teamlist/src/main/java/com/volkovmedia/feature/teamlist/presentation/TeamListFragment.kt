@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.volkovmedia.component.common.mvi.MviFragment
+import com.volkovmedia.component.common.util.init
 import com.volkovmedia.component.common.util.onClick
 import com.volkovmedia.component.data.model.dto.TeamDto
 import com.volkovmedia.feature.teamlist.R
@@ -33,8 +34,8 @@ internal class TeamListFragment : MviFragment<TeamListIntent, TeamListState, Not
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        teamslist_recycler.layoutManager = LinearLayoutManager(context)
-        teamslist_recycler.adapter = adapter
+        teamslist_toolbar.attachToActivity()
+        teamslist_recycler.init(adapter = adapter)
 
         teamslist_fab.onClick = navigator::navigateToTeamCreate
     }

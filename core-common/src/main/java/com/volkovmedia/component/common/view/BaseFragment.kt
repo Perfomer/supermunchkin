@@ -2,14 +2,19 @@ package com.volkovmedia.component.common.view
 
 import android.os.Bundle
 import android.view.*
+import androidx.annotation.LayoutRes
+import androidx.annotation.MenuRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
 @Suppress("unused")
 abstract class BaseFragment : Fragment() {
 
+    @LayoutRes
     protected open val layoutResource: Int? = null
 
+    @MenuRes
     protected open val menuResource: Int? = null
 
     protected val appCompatActivity: AppCompatActivity
@@ -37,6 +42,11 @@ abstract class BaseFragment : Fragment() {
         }
 
         return true
+    }
+
+    protected fun Toolbar.attachToActivity() {
+        appCompatActivity.setSupportActionBar(this)
+        appCompatActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     protected companion object {

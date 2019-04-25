@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.jakewharton.rxbinding3.widget.textChanges
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
+import com.volkovmedia.component.common.util.init
 import com.volkovmedia.component.common.util.onClick
 import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.feature.teamedit.R
@@ -50,8 +51,8 @@ internal class TeamEditFragment : MviFragment<TeamEditIntent, TeamEditState, Tea
             else R.string.teamedit_teamedit
         )
 
-        teamedit_participants.layoutManager = LinearLayoutManager(context)
-        teamedit_participants.adapter = adapter
+        teamedit_toolbar.attachToActivity()
+        teamedit_participants.init(adapter = adapter)
 
         teamedit_participants_add.onClick = { /* todo show dialog */ }
         teamedit_fab.onClick = { postIntent(TeamEditIntent.SaveTeamDetails) }
