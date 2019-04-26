@@ -1,4 +1,4 @@
-# supermanchkin
+# supermunchkin
 [2019] The app for the board game Munchkin
 
 ## WIP (Work In Progress): The project is not fully implemented!
