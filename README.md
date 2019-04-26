@@ -17,3 +17,12 @@
 <img src="art/munchkin_list.png" width="150">
 <img src="art/munchkin_edit.png" width="150">
 <img src="art/Battle.png" width="150">
+
+### Screens:
+| Screen Name | Ready percent |
+| --- | --- |
+| Team List | 90% ready |
+| Team Edit | 90% ready |
+| Munchkin List | 70% ready |
+| Munchkin Edit | 50% ready |
+| Battle | 5% ready |
