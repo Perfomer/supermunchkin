@@ -4,17 +4,29 @@ import android.app.Activity
 import android.os.Parcelable
 import androidx.fragment.app.Fragment
 
-fun <T : Parcelable> Fragment.argumentParcelable(key: String) = lazy { arguments?.getParcelable<T>(key) }
-fun Fragment.argumentBoolean(key: String) = lazy { arguments?.getBoolean(key) }
-fun Fragment.argumentInt(key: String) = lazy { arguments?.getInt(key) }
-fun Fragment.argumentLong(key: String) = lazy { arguments?.getLong(key) }
-fun Fragment.argumentShort(key: String) = lazy { arguments?.getShort(key) }
-fun Fragment.argumentChar(key: String) = lazy { arguments?.getChar(key) }
-fun Fragment.argumentByte(key: String) = lazy { arguments?.getByte(key) }
-fun Fragment.argumentFloat(key: String) = lazy { arguments?.getFloat(key) }
-fun Fragment.argumentDouble(key: String) = lazy { arguments?.getDouble(key) }
-fun Fragment.argumentCharSequence(key: String) = lazy { arguments?.getCharSequence(key) }
-fun Fragment.argumentString(key: String) = lazy { arguments?.getString(key) }
+fun <T : Parcelable> Fragment.argumentParcelable(key: String) = lazy { arguments!!.getParcelable<T>(key) }
+fun Fragment.argumentBoolean(key: String) = lazy { arguments!!.getBoolean(key) }
+fun Fragment.argumentInt(key: String) = lazy { arguments!!.getInt(key) }
+fun Fragment.argumentLong(key: String) = lazy { arguments!!.getLong(key) }
+fun Fragment.argumentShort(key: String) = lazy { arguments!!.getShort(key) }
+fun Fragment.argumentChar(key: String) = lazy { arguments!!.getChar(key) }
+fun Fragment.argumentByte(key: String) = lazy { arguments!!.getByte(key) }
+fun Fragment.argumentFloat(key: String) = lazy { arguments!!.getFloat(key) }
+fun Fragment.argumentDouble(key: String) = lazy { arguments!!.getDouble(key) }
+fun Fragment.argumentCharSequence(key: String) = lazy { arguments!!.getCharSequence(key) }
+fun Fragment.argumentString(key: String) = lazy { arguments!!.getString(key) }
+
+fun <T : Parcelable> Fragment.argumentParcelableNullable(key: String) = lazy { arguments?.getParcelable<T>(key) }
+fun Fragment.argumentBooleanNullable(key: String) = lazy { arguments?.getBoolean(key) }
+fun Fragment.argumentIntNullable(key: String) = lazy { arguments?.getInt(key) }
+fun Fragment.argumentLongNullable(key: String) = lazy { arguments?.getLong(key) }
+fun Fragment.argumentShortNullable(key: String) = lazy { arguments?.getShort(key) }
+fun Fragment.argumentCharNullable(key: String) = lazy { arguments?.getChar(key) }
+fun Fragment.argumentByteNullable(key: String) = lazy { arguments?.getByte(key) }
+fun Fragment.argumentFloatNullable(key: String) = lazy { arguments?.getFloat(key) }
+fun Fragment.argumentDoubleNullable(key: String) = lazy { arguments?.getDouble(key) }
+fun Fragment.argumentCharSequenceNullable(key: String) = lazy { arguments?.getCharSequence(key) }
+fun Fragment.argumentStringNullable(key: String) = lazy { arguments?.getString(key) }
 
 fun <T : Parcelable> Activity.argumentParcelable(key: String) = intent?.getParcelableExtra<T>(key)
 fun Activity.argumentBoolean(key: String, defaultValue: Boolean = false) = intent?.getBooleanExtra(key, defaultValue)
