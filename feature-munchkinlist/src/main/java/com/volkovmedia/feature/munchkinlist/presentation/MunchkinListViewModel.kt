@@ -15,6 +15,7 @@ internal class MunchkinListViewModel(
 
     override fun act(state: MunchkinListState, intent: MunchkinListIntent) = when (intent) {
         MunchkinListIntent.LoadData -> interactor.getTeam(teamId)
+            .asFlowSource(MunchkinListIntent.LoadData::class)
             .map<MunchkinListAction> { MunchkinListAction.DataShowRequested(it) }
             .startWith(MunchkinListAction.DataLoadingStarted)
 

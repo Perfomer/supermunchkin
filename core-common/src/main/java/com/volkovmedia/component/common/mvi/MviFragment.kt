@@ -13,10 +13,8 @@ abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
     private val initialIntent: Intent? = null
 ) : BaseFragment() {
 
-    protected val currentState: State?
-        get() = _currentState
-
-    private var _currentState: State? = null
+    protected var currentState: State? = null
+        private set
 
     private val viewModel by lazy { provideViewModel() }
 
@@ -44,7 +42,7 @@ abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
 
 
     private fun onStateReceived(state: State) {
-        _currentState = state
+        currentState = state
         render(state)
     }
 

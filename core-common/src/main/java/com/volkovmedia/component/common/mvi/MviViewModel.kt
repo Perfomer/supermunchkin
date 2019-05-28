@@ -1,7 +1,9 @@
 package com.volkovmedia.component.common.mvi
 
 import androidx.lifecycle.ViewModel
+import com.volkovmedia.component.common.util.SwitchableObservable
 import com.volkovmedia.component.common.util.flatWithLatestFrom
+import com.volkovmedia.component.common.util.switchSource
 import io.reactivex.Observable
 import io.reactivex.ObservableSource
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -12,7 +14,9 @@ import io.reactivex.rxkotlin.withLatestFrom
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
+import kotlin.reflect.KClass
 
+@Suppress("UNCHECKED_CAST")
 abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscription : Any>(
     initialState: State
 ) : ViewModel() {
@@ -26,6 +30,8 @@ abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscriptio
     private val intentSubject = PublishSubject.create<Intent>()
     private val subscriptionSubject = PublishSubject.create<Subscription>()
     private val stateSubject = BehaviorSubject.create<State>()
+
+    private val flows = mutableMapOf<KClass<out Intent>, Observable<*>>()
 
     private val disposable = CompositeDisposable()
 
@@ -53,6 +59,21 @@ abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscriptio
     protected open fun reduce(oldState: State, action: Action): State = oldState
 
     protected open fun publishSubscription(state: State, action: Action): Subscription? = null
+
+
+    protected fun <T : Any> Observable<T>.asFlowSource(intentType: KClass<out Intent>): Observable<T> {
+        val isFlowLaunched = flows.containsKey(intentType)
+
+        if (!isFlowLaunched) {
+            flows[intentType] = SwitchableObservable(this)
+        }
+
+        val flow = flows[intentType] as Observable<T>
+
+        flow.switchSource(this)
+
+        return if (isFlowLaunched) Observable.empty() else flow
+    }
 
 
     private fun onIntentReceived(intent: Intent, state: State) = act(state, intent)

@@ -27,6 +27,7 @@ internal class TeamEditViewModel(
         TeamEditIntent.LoadData -> {
             if (teamId == null || teamId == 0L) Observable.empty()
             else interactor.getTeam(teamId)
+                .asFlowSource(TeamEditIntent.LoadData::class)
                 .flatMap<TeamEditAction> { state.toShowDataAction(it.team, it.participants) }
                 .startWith(DataLoadingStarted)
         }

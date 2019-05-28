@@ -6,6 +6,7 @@ import androidx.core.view.isVisible
 import com.jakewharton.rxbinding3.widget.textChanges
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
+import com.volkovmedia.component.common.util.argumentLongNullable
 import com.volkovmedia.component.common.util.init
 import com.volkovmedia.component.common.util.onClick
 import com.volkovmedia.component.data.model.entity.Munchkin
@@ -32,7 +33,7 @@ internal class TeamEditFragment : MviFragment<TeamEditIntent, TeamEditState, Tea
 
     private val adapter = TeamEditAdapter(::onMunchkinClick, ::onMunchkinDeleteClick)
 
-    private val teamId by argumentLong(KEY_TEAMID)
+    private val teamId by argumentLongNullable(KEY_TEAMID)
 
 
     override fun provideViewModel() = getViewModel<TeamEditViewModel> { parametersOf(teamId) }

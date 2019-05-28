@@ -14,6 +14,7 @@ internal class TeamListViewModel(
 
     override fun act(state: TeamListState, intent: TeamListIntent) = when (intent) {
         TeamListIntent.LoadData -> interactor.getTeams()
+            .asFlowSource(TeamListIntent.LoadData::class)
             .map<TeamListAction> { TeamListAction.DataShowRequested(it) }
             .startWith(TeamListAction.DataLoadingStarted)
 
