@@ -41,7 +41,6 @@ internal class MunchkinEditFragment : MviFragment<MunchkinEditIntent, MunchkinEd
 
         disposable += munchkinedit_name.textChanges()
             .debounce(500, TimeUnit.MILLISECONDS)
-            .distinctUntilChanged()
             .subscribeBy { postIntent(EditName(it.toString())) }
 
         munchkinedit_race_halfblood.setOnCheckedChangeListener { _, isChecked ->
