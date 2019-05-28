@@ -5,12 +5,14 @@
 
 ### Technologies and approaches:
 * Kotlin
+* Single activity
 * Clean architecture
 * MVI
 * Multi-module
 * Koin
 * RxJava 2
 * Room
+* Cicerone
 
 ### Screenshots:
 <img src="art/team_list.png" width="150"> <img src="art/team_edit.png" width="150">
