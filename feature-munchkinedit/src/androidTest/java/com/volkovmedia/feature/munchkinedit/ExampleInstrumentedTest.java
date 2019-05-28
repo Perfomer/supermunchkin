@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.munchkinprofile;
+package com.volkovmedia.feature.munchkinedit;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;

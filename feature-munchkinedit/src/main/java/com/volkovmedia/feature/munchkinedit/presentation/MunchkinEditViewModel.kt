@@ -1,15 +1,13 @@
-package com.volkovmedia.feature.munchkinprofile.presentation
+package com.volkovmedia.feature.munchkinedit.presentation
 
 import com.volkovmedia.component.common.mvi.MviViewModel
-import com.volkovmedia.feature.munchkinprofile.domain.MunchkinEditInteractor
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditAction
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditIntent
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditState
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditSubscription
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.machine.MunchkinEditActor
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.machine.MunchkinEditReducer
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.machine.MunchkinEditSubscriptionPublisher
-import io.reactivex.Observable
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditAction
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditIntent
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditState
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditSubscription
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.machine.MunchkinEditActor
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.machine.MunchkinEditReducer
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.machine.MunchkinEditSubscriptionPublisher
 import org.koin.core.parameter.parametersOf
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject

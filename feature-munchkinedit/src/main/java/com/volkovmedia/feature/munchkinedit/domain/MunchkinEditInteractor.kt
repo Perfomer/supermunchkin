@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.munchkinprofile.domain
+package com.volkovmedia.feature.munchkinedit.domain
 
 import com.volkovmedia.component.data.model.entity.Munchkin
 

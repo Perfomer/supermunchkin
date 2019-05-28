@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.munchkinprofile.presentation
+package com.volkovmedia.feature.munchkinedit.presentation
 
 import android.os.Bundle
 import android.view.View
@@ -6,11 +6,11 @@ import com.jakewharton.rxbinding3.widget.textChanges
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
 import com.volkovmedia.component.common.util.onClick
-import com.volkovmedia.feature.munchkinprofile.R
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditIntent
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditIntent.*
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditState
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditSubscription
+import com.volkovmedia.feature.munchkinedit.R
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditIntent
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditIntent.*
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditState
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditSubscription
 import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.android.synthetic.main.munchkinedit_fragment.*
@@ -47,11 +47,11 @@ internal class MunchkinEditFragment : MviFragment<MunchkinEditIntent, MunchkinEd
         }
 
         munchkinedit_item_level_plus.onClick = {
-            currentState?.let { postIntent(EditGear(it.munchkin.level + 1)) }
+            currentState?.let { postIntent(EditLevel(it.munchkin.level + 1)) }
         }
 
         munchkinedit_item_level_minus.onClick = {
-            currentState?.let { postIntent(EditGear(it.munchkin.level - 1)) }
+            currentState?.let { postIntent(EditLevel(it.munchkin.level - 1)) }
         }
     }
 

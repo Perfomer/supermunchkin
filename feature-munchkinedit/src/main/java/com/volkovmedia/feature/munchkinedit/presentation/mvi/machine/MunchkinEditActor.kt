@@ -1,13 +1,13 @@
-package com.volkovmedia.feature.munchkinprofile.presentation.mvi.machine
+package com.volkovmedia.feature.munchkinedit.presentation.mvi.machine
 
 import com.volkovmedia.component.common.mvi.machine.MviActor
 import com.volkovmedia.component.common.util.toObservable
 import com.volkovmedia.component.data.model.MunchkinGender
-import com.volkovmedia.feature.munchkinprofile.domain.MunchkinEditInteractor
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditAction
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditIntent
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditIntent.*
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditState
+import com.volkovmedia.feature.munchkinedit.domain.MunchkinEditInteractor
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditAction
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditIntent
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditIntent.*
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditState
 import io.reactivex.Observable
 
 internal class MunchkinEditActor(

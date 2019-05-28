@@ -2,7 +2,7 @@ package com.volkovmedia.supermunchkin.navigation
 
 import androidx.fragment.app.Fragment
 import com.volkovmedia.feature.munchkinlist.DI_FRAGMENT_MUNCHKINLIST
-import com.volkovmedia.feature.munchkinprofile.DI_FRAGMENT_MUNCHKINEDIT
+import com.volkovmedia.feature.munchkinedit.DI_FRAGMENT_MUNCHKINEDIT
 import com.volkovmedia.feature.teamedit.DI_FRAGMENT_TEAMEDIT
 import com.volkovmedia.feature.teamlist.DI_FRAGMENT_TEAMLIST
 import org.koin.core.parameter.parametersOf
@@ -24,7 +24,7 @@ sealed class ScreenDestination : SupportAppScreen(), KoinComponent {
         override fun getFragment() = get<Fragment>(DI_FRAGMENT_MUNCHKINLIST) { parametersOf(teamId) }
     }
 
-    class MunchkinEdit(private val munchkinId: Long? = null) : ScreenDestination() {
+    class MunchkinEdit(private val munchkinId: Long) : ScreenDestination() {
         override fun getFragment() = get<Fragment>(DI_FRAGMENT_MUNCHKINEDIT) { parametersOf(munchkinId) }
     }
 

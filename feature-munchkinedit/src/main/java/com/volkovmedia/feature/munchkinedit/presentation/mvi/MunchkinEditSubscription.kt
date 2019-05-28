@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.munchkinprofile.presentation.mvi
+package com.volkovmedia.feature.munchkinedit.presentation.mvi
 
 internal sealed class MunchkinEditSubscription {
 

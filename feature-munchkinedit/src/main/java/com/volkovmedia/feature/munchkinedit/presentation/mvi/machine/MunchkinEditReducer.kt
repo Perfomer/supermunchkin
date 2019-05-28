@@ -1,8 +1,8 @@
-package com.volkovmedia.feature.munchkinprofile.presentation.mvi.machine
+package com.volkovmedia.feature.munchkinedit.presentation.mvi.machine
 
 import com.volkovmedia.component.common.mvi.machine.MviReducer
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditAction
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditState
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditAction
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditState
 
 internal class MunchkinEditReducer : MviReducer<MunchkinEditState, MunchkinEditAction>() {
 

@@ -1,10 +1,10 @@
-package com.volkovmedia.feature.munchkinprofile.presentation.mvi.machine
+package com.volkovmedia.feature.munchkinedit.presentation.mvi.machine
 
 import com.volkovmedia.component.common.mvi.machine.MviSubscriptionPublisher
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditAction
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditAction.*
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditState
-import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditSubscription
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditAction
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditAction.*
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditState
+import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditSubscription
 
 internal class MunchkinEditSubscriptionPublisher :
     MviSubscriptionPublisher<MunchkinEditState, MunchkinEditAction, MunchkinEditSubscription>() {

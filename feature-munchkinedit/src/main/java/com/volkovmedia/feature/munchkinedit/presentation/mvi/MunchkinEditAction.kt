@@ -1,4 +1,4 @@
-package com.volkovmedia.feature.munchkinprofile.presentation.mvi
+package com.volkovmedia.feature.munchkinedit.presentation.mvi
 
 import com.volkovmedia.component.data.model.entity.Munchkin
 
