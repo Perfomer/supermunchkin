@@ -28,4 +28,8 @@ sealed class ScreenDestination : SupportAppScreen(), KoinComponent {
         override fun getFragment() = get<Fragment>(DI_FRAGMENT_MUNCHKINEDIT) { parametersOf(munchkinId) }
     }
 
+    object Battle : ScreenDestination() {
+        override fun getFragment() = TODO()
+    }
+
 }
