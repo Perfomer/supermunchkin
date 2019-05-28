@@ -2,15 +2,10 @@ package com.volkovmedia.feature.munchkinprofile.presentation
 
 import android.os.Bundle
 import android.view.View
-import com.jakewharton.rxbinding3.view.clicks
 import com.jakewharton.rxbinding3.widget.textChanges
 import com.volkovmedia.component.common.mvi.MviFragment
 import com.volkovmedia.component.common.util.argumentLong
 import com.volkovmedia.component.common.util.onClick
-import com.volkovmedia.component.data.model.MunchkinClass
-import com.volkovmedia.component.data.model.MunchkinGender
-import com.volkovmedia.component.data.model.MunchkinRace
-import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.feature.munchkinprofile.R
 import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditIntent
 import com.volkovmedia.feature.munchkinprofile.presentation.mvi.MunchkinEditIntent.*
@@ -42,14 +37,6 @@ internal class MunchkinEditFragment : MviFragment<MunchkinEditIntent, MunchkinEd
         disposable += munchkinedit_name.textChanges()
             .debounce(500, TimeUnit.MILLISECONDS)
             .subscribeBy { postIntent(EditName(it.toString())) }
-
-        munchkinedit_race_halfblood.setOnCheckedChangeListener { _, isChecked ->
-            postIntent(EnableHalfBlood(isChecked))
-        }
-
-        munchkinedit_class_supermunchkin.setOnCheckedChangeListener { _, isChecked ->
-            postIntent(EnableSuperMunchkin(isChecked))
-        }
 
         munchkinedit_item_gear_plus.onClick = {
             currentState?.let { postIntent(EditGear(it.munchkin.gear + 1)) }

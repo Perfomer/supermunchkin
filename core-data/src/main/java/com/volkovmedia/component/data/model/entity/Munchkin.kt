@@ -3,9 +3,7 @@ package com.volkovmedia.component.data.model.entity
 import androidx.room.*
 import androidx.room.ForeignKey.CASCADE
 import com.volkovmedia.component.common.KeyEntity
-import com.volkovmedia.component.data.model.MunchkinClass
 import com.volkovmedia.component.data.model.MunchkinGender
-import com.volkovmedia.component.data.model.MunchkinRace
 
 @Entity(
     foreignKeys = [ForeignKey(
@@ -28,15 +26,7 @@ data class Munchkin(
 
     val gear: Int = 0,
 
-    val gender: MunchkinGender = MunchkinGender.MALE,
-
-    val firstClass: MunchkinClass? = null,
-
-    val secondClass: MunchkinClass? = null,
-
-    val firstRace: MunchkinRace = MunchkinRace.HUMAN,
-
-    val secondRace: MunchkinRace? = null
+    val gender: MunchkinGender = MunchkinGender.MALE
 ) : KeyEntity<Long> {
 
     @Ignore

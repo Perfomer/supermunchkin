@@ -5,8 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.volkovmedia.component.data.converter.MunchkinClassConverter
-import com.volkovmedia.component.data.converter.MunchkinRaceConverter
 import com.volkovmedia.component.data.converter.DateConverter
 import com.volkovmedia.component.data.converter.MunchkinGenderConverter
 import com.volkovmedia.component.data.dao.MunchkinDao
@@ -15,7 +13,7 @@ import com.volkovmedia.component.data.model.entity.Munchkin
 import com.volkovmedia.component.data.model.entity.Team
 
 @Database(
-    version = 5,
+    version = 6,
     exportSchema = true,
     entities = [
         Munchkin::class,
@@ -23,8 +21,6 @@ import com.volkovmedia.component.data.model.entity.Team
     ]
 )
 @TypeConverters(
-    MunchkinClassConverter::class,
-    MunchkinRaceConverter::class,
     MunchkinGenderConverter::class,
     DateConverter::class
 )

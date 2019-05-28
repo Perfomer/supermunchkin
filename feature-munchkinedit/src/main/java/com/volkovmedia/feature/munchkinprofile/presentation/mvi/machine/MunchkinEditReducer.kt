@@ -9,8 +9,6 @@ internal class MunchkinEditReducer : MviReducer<MunchkinEditState, MunchkinEditA
     override fun reduce(oldState: MunchkinEditState, action: MunchkinEditAction) = when (action) {
         MunchkinEditAction.DataLoadingStarted -> oldState.copy(isLoading = true)
         is MunchkinEditAction.ShowDataRequested -> oldState.copy(isLoading = false, munchkin = action.munchkin)
-        is MunchkinEditAction.EnableSuperMunchkin -> oldState.copy(superMunchkinEnabled = action.enable)
-        is MunchkinEditAction.EnableHalfBlood -> oldState.copy(halfBloodEnabled = action.enable)
         else -> super.reduce(oldState, action)
     }
 

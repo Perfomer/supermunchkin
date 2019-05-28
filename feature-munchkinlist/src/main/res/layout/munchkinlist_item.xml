@@ -51,7 +51,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constrainedWidth="true"
-                app:layout_constraintEnd_toStartOf="@+id/munchkinlist_item_class"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toEndOf="@+id/munchkinlist_item_gender"
                 app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_gender"
@@ -69,40 +69,12 @@
                 app:layout_constraintStart_toEndOf="@+id/munchkinlist_item_name"
                 app:layout_constraintTop_toTopOf="@+id/munchkinlist_item_name" />
 
-            <TextView
-                android:id="@+id/munchkinlist_item_race"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_dark"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/munchkinlist_item_name"
-                app:layout_constraintStart_toStartOf="@+id/munchkinlist_item_name"
-                app:layout_constraintTop_toBottomOf="@+id/munchkinlist_item_name"
-                tools:text="Человек, Орк" />
-
-            <TextView
-                android:id="@+id/munchkinlist_item_class"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_square"
-                android:backgroundTint="@color/blue_light"
-                android:paddingStart="12dp"
-                android:paddingTop="6dp"
-                android:paddingEnd="12dp"
-                android:paddingBottom="6dp"
-                android:textColor="@color/primary_dark"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Клирик, Вор" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="18dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/munchkinlist_item_race">
+                app:layout_constraintTop_toBottomOf="@id/munchkinlist_item_name">
 
                 <TextView
                     android:id="@+id/munchkinlist_item_level_title"
@@ -180,10 +152,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/munchkinlist_item_race">
+                app:layout_constraintTop_toBottomOf="@id/munchkinlist_item_name">
 
                 <TextView
                     android:id="@+id/munchkinlist_item_strength_title"
@@ -222,9 +194,9 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/munchkinlist_item_race">
+                app:layout_constraintTop_toBottomOf="@id/munchkinlist_item_name">
 
                 <TextView
                     android:id="@+id/munchkinlist_item_gear_title"
