@@ -11,10 +11,10 @@ import org.koin.dsl.module.module
 
 val teamListModule = module {
     viewModel { TeamListViewModel(get()) }
-    factory(name = FRAGMENT_TEAMLIST) { TeamListFragment() } bind Fragment::class
+    factory(name = DI_FRAGMENT_TEAMLIST) { TeamListFragment() } bind Fragment::class
 
     single { TeamListDataSource(get()) } bind TeamListRepository::class
     single { TeamListInteractor(get()) }
 }
 
-const val FRAGMENT_TEAMLIST = "TeamListFragment"
+const val DI_FRAGMENT_TEAMLIST = "TeamListFragment"

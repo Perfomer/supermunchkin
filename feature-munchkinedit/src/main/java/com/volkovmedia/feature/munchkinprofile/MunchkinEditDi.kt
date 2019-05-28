@@ -22,9 +22,9 @@ val munchkinEditModule = module {
 
     viewModel { (munchkinId: Long) -> MunchkinEditViewModel(munchkinId) }
 
-    factory(name = FRAGMENT_MUNCHKINEDIT) { (munchkinId: Long) ->
+    factory(name = DI_FRAGMENT_MUNCHKINEDIT) { (munchkinId: Long) ->
         MunchkinEditFragment.newInstance(munchkinId)
     } bind Fragment::class
 }
 
-const val FRAGMENT_MUNCHKINEDIT = "MunchkinEditFragment"
+const val DI_FRAGMENT_MUNCHKINEDIT = "MunchkinEditFragment"

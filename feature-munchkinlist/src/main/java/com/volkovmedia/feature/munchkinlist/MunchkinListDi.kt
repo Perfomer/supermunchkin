@@ -15,9 +15,9 @@ val munchkinListModule = module {
 
     viewModel { (teamId: Long) -> MunchkinListViewModel(teamId, get()) }
 
-    factory(name = FRAGMENT_MUNCHKINLIST) { (teamId: Long) ->
+    factory(name = DI_FRAGMENT_MUNCHKINLIST) { (teamId: Long) ->
         MunchkinListFragment.newInstance(teamId)
     } bind Fragment::class
 }
 
-const val FRAGMENT_MUNCHKINLIST = "MunchkinListFragment"
+const val DI_FRAGMENT_MUNCHKINLIST = "MunchkinListFragment"

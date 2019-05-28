@@ -12,7 +12,7 @@ import org.koin.dsl.module.module
 val teamEditModule = module {
     viewModel { (teamId: Long?) -> TeamEditViewModel(teamId, get()) }
 
-    factory(name = FRAGMENT_TEAMEDIT) { (teamId: Long?) ->
+    factory(name = DI_FRAGMENT_TEAMEDIT) { (teamId: Long?) ->
         TeamEditFragment.newInstance(teamId)
     } bind Fragment::class
 
@@ -20,4 +20,4 @@ val teamEditModule = module {
     single { TeamEditDataSource(get(), get()) } bind TeamEditRepository::class
 }
 
-const val FRAGMENT_TEAMEDIT = "TeamEditFragment"
+const val DI_FRAGMENT_TEAMEDIT = "TeamEditFragment"
