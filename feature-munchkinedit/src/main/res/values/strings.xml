@@ -1,3 +1,3 @@
 <resources>
-    <string name="app_name">feature-munchkinprofile</string>
+    <string name="munchkinedit_inputerror_emptyname">Name cannot be empty</string>
 </resources>

@@ -5,7 +5,7 @@ import com.volkovmedia.feature.munchkinlist.munchkinListModule
 import com.volkovmedia.feature.munchkinedit.munchkinEditModule
 import com.volkovmedia.feature.teamedit.teamEditModule
 import com.volkovmedia.feature.teamlist.teamListModule
-import com.volkovmedia.supermunchkin.navigation.navigationModule
+import com.volkovmedia.supermunchkin.presentation.navigation.navigationModule
 
 val koinModules = listOf(
     navigationModule,

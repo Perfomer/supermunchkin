@@ -25,9 +25,13 @@ internal class MunchkinEditActor(
 
         is EditGender -> state.toShowDataAction(gender = intent.gender)
 
-        is EditLevel -> state.toShowDataAction(level = intent.level)
+        IncreaseLevel -> state.toShowDataAction(level = state.munchkin.level + 1)
 
-        is EditGear -> state.toShowDataAction(gear = intent.gear)
+        DecreaseLevel -> state.toShowDataAction(level = state.munchkin.level - 1)
+
+        IncreaseGear -> state.toShowDataAction(level = state.munchkin.gear + 1)
+
+        DecreaseGear -> state.toShowDataAction(level = state.munchkin.gear - 1)
 
         KillMunchkin -> state.toShowDataAction(gear = 0)
 

@@ -89,7 +89,7 @@
                     android:padding="24dp">
 
                     <TextView
-                        android:id="@+id/munchkinedit_strength_title"
+                        android:id="@+id/munchkinedit_strengthlayout_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Сила:"
@@ -100,58 +100,58 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/munchkinedit_item_level"
+                        android:id="@+id/munchkinedit_level"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_strength_title">
+                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_strengthlayout_title">
 
                         <TextView
-                            android:id="@+id/munchkinedit_item_level_title"
+                            android:id="@+id/munchkinedit_level_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Уровень"
                             android:textColor="@color/primary_dark"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_level_circle"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
-                            android:id="@+id/munchkinedit_item_level_circle"
+                            android:id="@+id/munchkinedit_level_circle"
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginStart="20dp"
                             android:background="@drawable/bg_circle"
                             android:backgroundTint="@color/blue_light"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_item_level_title" />
+                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_level_title" />
 
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:src="@drawable/ic_helmet"
                             android:tint="@color/blue_light_bright"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level_circle" />
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_level_circle" />
 
                         <TextView
-                            android:id="@+id/munchkinedit_item_level_value"
+                            android:id="@+id/munchkinedit_level_value"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/primary_dark"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level_circle"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_level_circle"
                             tools:text="12" />
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/munchkinedit_item_level_minus"
+                            android:id="@+id/munchkinedit_level_minus"
                             android:layout_width="40dp"
                             android:layout_height="32dp"
                             android:background="@color/accent"
@@ -159,13 +159,13 @@
                             android:textColor="@android:color/white"
                             android:textSize="16sp"
                             app:cornerRadius="10dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintEnd_toStartOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level_circle" />
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintEnd_toStartOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_level_circle" />
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/munchkinedit_item_level_plus"
+                            android:id="@+id/munchkinedit_level_plus"
                             android:layout_width="40dp"
                             android:layout_height="32dp"
                             android:background="@color/accent"
@@ -173,51 +173,51 @@
                             android:textColor="@android:color/white"
                             android:textSize="16sp"
                             app:cornerRadius="10dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintStart_toEndOf="@+id/munchkinedit_item_level_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level_circle" />
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintStart_toEndOf="@+id/munchkinedit_level_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_level_circle" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_level"
+                        app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_level"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_level">
+                        app:layout_constraintTop_toTopOf="@+id/munchkinedit_level">
 
                         <TextView
-                            android:id="@+id/munchkinedit_item_strength_title"
+                            android:id="@+id/munchkinedit_strength_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Сила"
                             android:textColor="@color/text_primary"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_strength_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_strength_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_strength_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_strength_circle"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
-                            android:id="@+id/munchkinedit_item_strength_circle"
+                            android:id="@+id/munchkinedit_strength_circle"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:background="@drawable/bg_circle"
                             android:backgroundTint="@color/grey_light"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_item_strength_title" />
+                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_strength_title" />
 
                         <TextView
-                            android:id="@+id/munchkinedit_item_strength_value"
+                            android:id="@+id/munchkinedit_strength_value"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/text_primary"
                             android:textSize="22sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_strength_circle"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_strength_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_strength_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_strength_circle"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_strength_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_strength_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_strength_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_strength_circle"
                             tools:text="12" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -227,53 +227,53 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_strength_title">
+                        app:layout_constraintTop_toBottomOf="@+id/munchkinedit_strengthlayout_title">
 
                         <TextView
-                            android:id="@+id/munchkinedit_item_gear_title"
+                            android:id="@+id/munchkinedit_gear_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Снаряжение"
                             android:textColor="@color/primary_dark"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_gear_circle"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
-                            android:id="@+id/munchkinedit_item_gear_circle"
+                            android:id="@+id/munchkinedit_gear_circle"
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginStart="20dp"
                             android:background="@drawable/bg_circle"
                             android:backgroundTint="@color/blue_light"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_item_gear_title" />
+                            app:layout_constraintTop_toBottomOf="@+id/munchkinedit_gear_title" />
 
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:src="@drawable/ic_sword"
                             android:tint="@color/blue_light_bright"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_gear_circle" />
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_gear_circle" />
 
                         <TextView
-                            android:id="@+id/munchkinedit_item_gear_value"
+                            android:id="@+id/munchkinedit_gear_value"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/primary_dark"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_gear_circle"
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_gear_circle"
                             tools:text="12" />
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/munchkinedit_item_gear_minus"
+                            android:id="@+id/munchkinedit_gear_minus"
                             android:layout_width="40dp"
                             android:layout_height="32dp"
                             android:background="@color/accent"
@@ -281,13 +281,13 @@
                             android:textColor="@android:color/white"
                             android:textSize="16sp"
                             app:cornerRadius="10dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintEnd_toStartOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_gear_circle" />
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintEnd_toStartOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintStart_toStartOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_gear_circle" />
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/munchkinedit_item_gear_plus"
+                            android:id="@+id/munchkinedit_gear_plus"
                             android:layout_width="40dp"
                             android:layout_height="32dp"
                             android:background="@color/accent"
@@ -295,10 +295,10 @@
                             android:textColor="@android:color/white"
                             android:textSize="16sp"
                             app:cornerRadius="10dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintStart_toEndOf="@+id/munchkinedit_item_gear_circle"
-                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_item_gear_circle" />
+                            app:layout_constraintBottom_toBottomOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintStart_toEndOf="@+id/munchkinedit_gear_circle"
+                            app:layout_constraintTop_toTopOf="@+id/munchkinedit_gear_circle" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -316,7 +316,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_plus" />
+        app:srcCompat="@drawable/ic_check" />
 
     <ProgressBar
         android:id="@+id/munchkinedit_progressbar"

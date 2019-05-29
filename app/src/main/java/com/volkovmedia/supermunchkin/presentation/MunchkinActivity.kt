@@ -1,10 +1,11 @@
-package com.volkovmedia.supermunchkin
+package com.volkovmedia.supermunchkin.presentation
 
 import com.volkovmedia.feature.munchkinlist.presentation.MunchkinListNavigator
 import com.volkovmedia.feature.teamedit.presentation.TeamEditNavigator
 import com.volkovmedia.feature.teamlist.presentation.TeamListNavigator
-import com.volkovmedia.supermunchkin.navigation.ScreenDestination
-import com.volkovmedia.supermunchkin.navigation.ScreenDestination.*
+import com.volkovmedia.supermunchkin.R
+import com.volkovmedia.supermunchkin.presentation.base.BaseActivity
+import com.volkovmedia.supermunchkin.presentation.navigation.ScreenDestination.*
 
 class MunchkinActivity : BaseActivity(
     screenLayoutResource = R.layout.activity_munchkin,

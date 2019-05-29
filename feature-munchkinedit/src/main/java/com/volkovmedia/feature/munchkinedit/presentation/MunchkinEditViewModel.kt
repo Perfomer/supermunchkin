@@ -25,12 +25,16 @@ internal class MunchkinEditViewModel(
     private val subscriptionPublisher: MunchkinEditSubscriptionPublisher by inject()
 
 
+    init {
+        postIntent(MunchkinEditIntent.LoadData)
+    }
+
+
     override fun act(state: MunchkinEditState, intent: MunchkinEditIntent) = actor.act(state, intent)
 
     override fun reduce(oldState: MunchkinEditState, action: MunchkinEditAction) = reducer.reduce(oldState, action)
 
-    override fun publishSubscription(state: MunchkinEditState, action: MunchkinEditAction): MunchkinEditSubscription? {
-        return subscriptionPublisher.publishSubscription(state, action)
-    }
+    override fun publishSubscription(state: MunchkinEditState, action: MunchkinEditAction) =
+        subscriptionPublisher.publishSubscription(state, action)
 
 }

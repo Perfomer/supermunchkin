@@ -1,4 +1,4 @@
-package com.volkovmedia.supermunchkin.navigation
+package com.volkovmedia.supermunchkin.presentation.navigation
 
 import androidx.fragment.app.Fragment
 import com.volkovmedia.feature.munchkinlist.DI_FRAGMENT_MUNCHKINLIST

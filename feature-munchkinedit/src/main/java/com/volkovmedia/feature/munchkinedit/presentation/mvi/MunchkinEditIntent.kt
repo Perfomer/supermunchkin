@@ -10,9 +10,13 @@ internal sealed class MunchkinEditIntent {
 
     class EditGender(val gender: MunchkinGender): MunchkinEditIntent()
 
-    class EditLevel(val level: Int): MunchkinEditIntent()
+    object IncreaseLevel : MunchkinEditIntent()
 
-    class EditGear(val gear: Int): MunchkinEditIntent()
+    object DecreaseLevel : MunchkinEditIntent()
+
+    object IncreaseGear : MunchkinEditIntent()
+
+    object DecreaseGear : MunchkinEditIntent()
 
     object KillMunchkin: MunchkinEditIntent()
 

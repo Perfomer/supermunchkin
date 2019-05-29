@@ -17,11 +17,9 @@ import kotlinx.android.synthetic.main.teamslist_fragment.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 internal class TeamListFragment : MviFragment<TeamListIntent, TeamListState, Nothing>(
+    layoutResource = R.layout.teamslist_fragment,
     initialIntent = LoadData
 ) {
-
-    override val layoutResource = R.layout.teamslist_fragment
-
 
     private val navigator by lazy { activity as TeamListNavigator }
 

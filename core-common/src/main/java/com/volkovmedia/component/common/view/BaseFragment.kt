@@ -10,13 +10,10 @@ import androidx.fragment.app.Fragment
 import io.reactivex.disposables.CompositeDisposable
 
 @Suppress("unused")
-abstract class BaseFragment : Fragment() {
-
-    @LayoutRes
-    protected open val layoutResource: Int? = null
-
-    @MenuRes
-    protected open val menuResource: Int? = null
+abstract class BaseFragment(
+    @LayoutRes private val layoutResource: Int? = null,
+    @MenuRes private val menuResource: Int? = null
+) : Fragment() {
 
     protected val appCompatActivity: AppCompatActivity
         get() = activity as AppCompatActivity
@@ -45,11 +42,16 @@ abstract class BaseFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            android.R.id.home -> activity?.onBackPressed()
+            android.R.id.home -> goBack()
             else -> return super.onOptionsItemSelected(item)
         }
 
         return true
+    }
+
+
+    protected fun goBack() {
+        activity?.onBackPressed()
     }
 
     protected fun Toolbar.attachToActivity() {

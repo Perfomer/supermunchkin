@@ -20,13 +20,10 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
 
 internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinListState, Nothing>(
+    layoutResource = R.layout.munchkinlist_fragment,
+    menuResource = R.menu.munchkinlist_menu,
     initialIntent = MunchkinListIntent.LoadData
 ) {
-
-    override val layoutResource = R.layout.munchkinlist_fragment
-
-    override val menuResource = R.menu.munchkinlist_menu
-
 
     private val navigator by lazy { activity as MunchkinListNavigator }
 
@@ -37,6 +34,7 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
         ::onMunchkinLevelRaiseUpClick,
         ::onMunchkinGearRaiseUpClick
     )
+
 
     override fun provideViewModel() = getViewModel<MunchkinListViewModel> { parametersOf(teamId) }
 
@@ -66,6 +64,7 @@ internal class MunchkinListFragment : MviFragment<MunchkinListIntent, MunchkinLi
 
         munchkinlist_progressbar.isVisible = state.isLoading
     }
+
 
     private fun onMunchkinClick(munchkin: MunchkinDto) = navigator.navigateToMunchkinEdit(munchkin.id)
 

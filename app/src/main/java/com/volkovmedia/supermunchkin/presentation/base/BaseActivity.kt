@@ -1,11 +1,11 @@
-package com.volkovmedia.supermunchkin
+package com.volkovmedia.supermunchkin.presentation.base
 
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import com.volkovmedia.supermunchkin.navigation.ScreenDestination
+import com.volkovmedia.supermunchkin.presentation.navigation.ScreenDestination
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 import ru.terrakok.cicerone.NavigatorHolder

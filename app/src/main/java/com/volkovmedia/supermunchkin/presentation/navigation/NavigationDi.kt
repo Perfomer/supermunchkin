@@ -1,4 +1,4 @@
-package com.volkovmedia.supermunchkin.navigation
+package com.volkovmedia.supermunchkin.presentation.navigation
 
 import androidx.fragment.app.FragmentActivity
 import org.koin.dsl.module.module

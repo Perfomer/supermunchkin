@@ -1,5 +1,7 @@
 package com.volkovmedia.component.common.mvi
 
+import androidx.annotation.LayoutRes
+import androidx.annotation.MenuRes
 import com.volkovmedia.component.common.util.toObservable
 import com.volkovmedia.component.common.view.BaseFragment
 import io.reactivex.ObservableSource
@@ -10,8 +12,10 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 
 abstract class MviFragment<Intent : Any, State : Any, Subscription : Any>(
+    @LayoutRes layoutResource: Int? = null,
+    @MenuRes menuResource: Int? = null,
     private val initialIntent: Intent? = null
-) : BaseFragment() {
+) : BaseFragment(layoutResource, menuResource) {
 
     protected var currentState: State? = null
         private set
