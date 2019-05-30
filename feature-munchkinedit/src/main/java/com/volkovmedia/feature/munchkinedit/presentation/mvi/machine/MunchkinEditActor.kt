@@ -4,6 +4,7 @@ import com.volkovmedia.component.common.mvi.machine.MviActor
 import com.volkovmedia.component.common.util.toObservable
 import com.volkovmedia.component.data.model.MunchkinGender
 import com.volkovmedia.feature.munchkinedit.domain.MunchkinEditInteractor
+import com.volkovmedia.feature.munchkinedit.presentation.MunchkinEditInputError.EMPTY_NAME
 import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditAction
 import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditIntent
 import com.volkovmedia.feature.munchkinedit.presentation.mvi.MunchkinEditIntent.*
@@ -35,8 +36,14 @@ internal class MunchkinEditActor(
 
         KillMunchkin -> state.toShowDataAction(gear = 0)
 
-        AcceptChanges -> interactor.saveMunchkin(state.munchkin)
-            .andThen(MunchkinEditAction.DataSaved.toObservable())
+        AcceptChanges -> {
+            if (state.munchkin.name.isBlank()) {
+                Observable.just(MunchkinEditAction.WrongDataInputted(EMPTY_NAME))
+            } else {
+                interactor.saveMunchkin(state.munchkin)
+                    .andThen(MunchkinEditAction.DataSaved.toObservable())
+            }
+        }
     }
 
     private companion object {
