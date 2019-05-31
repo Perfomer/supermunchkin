@@ -45,7 +45,7 @@ abstract class MviViewModel<Intent : Any, Action : Any, State : Any, Subscriptio
             .subscribeBy(onNext = stateSubject::onNext)
     }
 
-    override fun onCleared() {
+    final override fun onCleared() {
         super.onCleared()
         disposable.clear()
     }

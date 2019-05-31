@@ -7,7 +7,7 @@ import com.volkovmedia.supermunchkin.R
 import com.volkovmedia.supermunchkin.presentation.base.BaseActivity
 import com.volkovmedia.supermunchkin.presentation.navigation.ScreenDestination.*
 
-class MunchkinActivity : BaseActivity(
+class SuperMunchkinActivity : BaseActivity(
     screenLayoutResource = R.layout.activity_munchkin,
     frameLayoutResource = R.id.main_frame,
     startScreen = TeamList

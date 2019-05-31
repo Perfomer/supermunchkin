@@ -5,7 +5,7 @@ import com.facebook.stetho.Stetho
 import org.koin.android.ext.android.startKoin
 
 @Suppress("unused")
-class MunchkinApplication : Application() {
+class SuperMunchkinApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

@@ -27,7 +27,7 @@ abstract class BaseFragment(
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return if (layoutResource == null) super.onCreateView(inflater, container, savedInstanceState)
-        else inflater.inflate(layoutResource!!, container, false)
+        else inflater.inflate(layoutResource, container, false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

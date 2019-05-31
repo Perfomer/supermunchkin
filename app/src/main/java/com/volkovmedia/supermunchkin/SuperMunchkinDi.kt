@@ -1,8 +1,9 @@
 package com.volkovmedia.supermunchkin
 
 import com.volkovmedia.component.data.databaseModule
-import com.volkovmedia.feature.munchkinlist.munchkinListModule
+import com.volkovmedia.feature.battle.battleModule
 import com.volkovmedia.feature.munchkinedit.munchkinEditModule
+import com.volkovmedia.feature.munchkinlist.munchkinListModule
 import com.volkovmedia.feature.teamedit.teamEditModule
 import com.volkovmedia.feature.teamlist.teamListModule
 import com.volkovmedia.supermunchkin.presentation.navigation.navigationModule
@@ -15,5 +16,6 @@ val koinModules = listOf(
     teamEditModule,
     teamListModule,
     munchkinEditModule,
-    munchkinListModule
+    munchkinListModule,
+    battleModule
 )
