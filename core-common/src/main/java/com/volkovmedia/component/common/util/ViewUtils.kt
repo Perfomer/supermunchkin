@@ -1,13 +1,14 @@
 package com.volkovmedia.component.common.util
 
 import android.content.Context
-import androidx.annotation.LayoutRes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.annotation.ColorRes
+import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -45,8 +46,15 @@ fun ImageView.setTint(@ColorRes colorRes: Int) {
 
 fun RecyclerView.init(
     adapter: RecyclerView.Adapter<*>,
+    itemTouchHelper: ItemTouchHelper.Callback? = null,
     layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context)
 ) {
     this.layoutManager = layoutManager
     this.adapter = adapter
+
+    itemTouchHelper?.let { this.addItemTouchHelper(it) }
+}
+
+fun RecyclerView.addItemTouchHelper(callback: ItemTouchHelper.Callback) {
+    ItemTouchHelper(callback).attachToRecyclerView(this)
 }
