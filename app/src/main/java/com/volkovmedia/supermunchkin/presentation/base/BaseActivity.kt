@@ -1,7 +1,6 @@
 package com.volkovmedia.supermunchkin.presentation.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -25,8 +24,8 @@ abstract class BaseActivity(
     private val router by inject<Router>()
 
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(screenLayoutResource)
 
         if (savedInstanceState == null) {
