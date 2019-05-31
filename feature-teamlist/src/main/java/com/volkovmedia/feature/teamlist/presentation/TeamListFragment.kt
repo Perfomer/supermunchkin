@@ -31,7 +31,7 @@ internal class TeamListFragment : MviFragment<TeamListIntent, TeamListState, Not
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        teamslist_toolbar.attachToActivity()
+        teamslist_toolbar.attachToActivity(enableArrowUp = false)
         teamslist_recycler.init(adapter)
 
         teamslist_fab.onClick = navigator::navigateToTeamCreate
